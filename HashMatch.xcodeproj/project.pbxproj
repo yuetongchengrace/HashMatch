@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */; };
+		2419F045256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */; };
+		2419F049256C483600D9F7CE /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F048256C483600D9F7CE /* QuestionnaireViewController.swift */; };
 		C1018A07DD8125E2E51C76D2 /* Pods_HashMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE326B5391A3E89674D02DC /* Pods_HashMatch.framework */; };
 		DB46A18825691C6B00903890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB46A18725691C6B00903890 /* AppDelegate.swift */; };
 		DB46A18A25691C6B00903890 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB46A18925691C6B00903890 /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescribeYourselfVC.swift; sourceTree = "<group>"; };
+		2419F048256C483600D9F7CE /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		332BB559115EFBB37861AF50 /* Pods-HashMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HashMatch.debug.xcconfig"; path = "Target Support Files/Pods-HashMatch/Pods-HashMatch.debug.xcconfig"; sourceTree = "<group>"; };
 		DB46A18425691C6B00903890 /* HashMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB46A18725691C6B00903890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			children = (
 				DB46A19D25691D6500903890 /* LoginViewController.swift */,
 				2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */,
+				2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */,
+				2419F048256C483600D9F7CE /* QuestionnaireViewController.swift */,
 				DB46A19B25691D5400903890 /* SignupViewController.swift */,
 				DB46A18725691C6B00903890 /* AppDelegate.swift */,
 				DB46A18925691C6B00903890 /* SceneDelegate.swift */,
@@ -225,6 +231,8 @@
 				DB46A19C25691D5400903890 /* SignupViewController.swift in Sources */,
 				DB46A19E25691D6500903890 /* LoginViewController.swift in Sources */,
 				DB46A18A25691C6B00903890 /* SceneDelegate.swift in Sources */,
+				2419F049256C483600D9F7CE /* QuestionnaireViewController.swift in Sources */,
+				2419F045256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

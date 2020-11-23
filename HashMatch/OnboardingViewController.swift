@@ -10,21 +10,22 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
+    @IBOutlet weak var nextBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        nextBtn.applyPrimaryBtnDesign()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension UIButton{
+    func applyPrimaryBtnDesign(){
+        self.layer.cornerRadius = 20.0
     }
-    */
-
+}
+extension UITextView{
+    func textViewDesign(){
+        self.layer.cornerRadius = 10.0
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.lightGray.cgColor
+    }
 }
