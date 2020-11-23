@@ -20,6 +20,7 @@
 		DB46A19C25691D5400903890 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB46A19B25691D5400903890 /* SignupViewController.swift */; };
 		DB46A19E25691D6500903890 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB46A19D25691D6500903890 /* LoginViewController.swift */; };
 		DB46A1A0256922C200903890 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB46A19F256922C200903890 /* GoogleService-Info.plist */; };
+		DB88DFBF256C7C8800D2A4F6 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB88DFBE256C7C8800D2A4F6 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DB46A19B25691D5400903890 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		DB46A19D25691D6500903890 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DB46A19F256922C200903890 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB88DFBE256C7C8800D2A4F6 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		DDE326B5391A3E89674D02DC /* Pods_HashMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HashMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B02F0B60B69361F6067ADA /* Pods-HashMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HashMatch.release.xcconfig"; path = "Target Support Files/Pods-HashMatch/Pods-HashMatch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 			children = (
 				DB46A19D25691D6500903890 /* LoginViewController.swift */,
 				2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */,
+				DB88DFBE256C7C8800D2A4F6 /* CollectionViewController.swift */,
 				2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */,
 				2419F048256C483600D9F7CE /* QuestionnaireViewController.swift */,
 				DB46A19B25691D5400903890 /* SignupViewController.swift */,
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB88DFBF256C7C8800D2A4F6 /* CollectionViewController.swift in Sources */,
 				DB46A18C25691C6B00903890 /* ViewController.swift in Sources */,
 				2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */,
 				DB46A18825691C6B00903890 /* AppDelegate.swift in Sources */,

@@ -37,11 +37,15 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: email.text!, password:password.text! ) { (result, error) in
                 if error != nil {
                     self.errorLabel.text = error!.localizedDescription
+                    self.errorLabel.alpha = 1
                     
                 }
                 else{
                     //signed in successfully
                     //Go to main collection View
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let secondViewController = storyboard.instantiateViewController(withIdentifier: "Mainpage")
+                    self.navigationController?.pushViewController(secondViewController, animated: true)
                 }
             }
             }

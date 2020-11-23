@@ -13,6 +13,8 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var nextBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //hide navigation bar so that the user cannot click back to the signup page
+        navigationController?.setNavigationBarHidden(true, animated: false)
         // Do any additional setup after loading the view.
         nextBtn.applyPrimaryBtnDesign()
     }

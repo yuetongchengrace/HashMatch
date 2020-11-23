@@ -44,9 +44,14 @@ class SignupViewController: UIViewController {
                     print(self.email!.text!)
                     print(self.password!.text!)
                 }
+                else{
+                    //transition to the next screen which should be the onboarding questions
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let secondViewController = storyboard.instantiateViewController(withIdentifier: "Onboarding1")
+                    //self.present(secondViewController, animated: true, completion: nil)
+                    self.navigationController?.pushViewController(secondViewController, animated: true)
+                }
             }
-            //created user
-            //transition to the next screen which should be the onboarding questions
         }
     }
     

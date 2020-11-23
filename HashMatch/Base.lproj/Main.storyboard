@@ -174,7 +174,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="IXY-01-hCr">
             <objects>
-                <viewController id="Ra9-U1-Htt" customClass="OnboardingViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding1" id="Ra9-U1-Htt" customClass="OnboardingViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AxW-2c-1Ru">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,13 +353,14 @@ EExhc3QgTmFtZQ
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GF2-bk-gFl"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OKO-vR-YC2"/>
                     <connections>
                         <outlet property="nextBtn" destination="H3r-O4-Ac4" id="NGc-nh-bNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7IT-h3-JVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2346.4000000000001" y="50.985221674876847"/>
+            <point key="canvasLocation" x="2484" y="-300"/>
         </scene>
         <!--Questionnaire View Controller-->
         <scene sceneID="GSu-kE-IG6">
@@ -483,7 +484,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xur-U9-Dak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3832.8000000000002" y="50.985221674876847"/>
+            <point key="canvasLocation" x="3905" y="-300"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q7H-ja-NnK">
@@ -503,10 +504,10 @@ EExhc3QgTmFtZQ
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Collection View Controller-->
         <scene sceneID="xYv-VE-oQS">
             <objects>
-                <viewController id="33Q-Bo-zac" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Mainpage" id="33Q-Bo-zac" customClass="CollectionViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eNA-yz-XsV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -558,7 +559,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="682-AK-akR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4610" y="51"/>
+            <point key="canvasLocation" x="2484" y="383"/>
         </scene>
         <!--Onboarding Describe YourselfVC-->
         <scene sceneID="XO2-BQ-E9V">
@@ -630,7 +631,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NO4-c9-wkk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3068" y="51"/>
+            <point key="canvasLocation" x="3170" y="-300"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5ts-Gy-wYP">
@@ -741,7 +742,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfQ-Gp-d3C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6046" y="51"/>
+            <point key="canvasLocation" x="3938" y="383"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tId-A9-5JG">
@@ -841,7 +842,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYo-UM-iol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6786" y="51"/>
+            <point key="canvasLocation" x="4742" y="383"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uuw-W9-9s0">
@@ -944,7 +945,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7g-nZ-J2o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5286" y="51"/>
+            <point key="canvasLocation" x="3209" y="383"/>
         </scene>
     </scenes>
     <resources>
