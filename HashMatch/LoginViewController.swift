@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
                     //Go to main collection View
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let secondViewController = storyboard.instantiateViewController(withIdentifier: "Mainpage")
+                    // self.present(secondViewController, animated: true, completion: nil)
                     self.navigationController?.pushViewController(secondViewController, animated: true)
                 }
             }

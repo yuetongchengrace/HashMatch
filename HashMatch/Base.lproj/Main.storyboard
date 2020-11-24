@@ -504,10 +504,10 @@ EExhc3QgTmFtZQ
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Explore-->
         <scene sceneID="xYv-VE-oQS">
             <objects>
-                <viewController storyboardIdentifier="Mainpage" id="33Q-Bo-zac" customClass="CollectionViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="33Q-Bo-zac" customClass="CollectionViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eNA-yz-XsV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -556,10 +556,11 @@ EExhc3QgTmFtZQ
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ZXe-kB-5xZ"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="QJg-vg-mXK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="682-AK-akR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="383"/>
+            <point key="canvasLocation" x="3426.4000000000001" y="382.75862068965517"/>
         </scene>
         <!--Onboarding Describe YourselfVC-->
         <scene sceneID="XO2-BQ-E9V">
@@ -742,7 +743,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfQ-Gp-d3C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3938" y="383"/>
+            <point key="canvasLocation" x="4879.1999999999998" y="382.75862068965517"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tId-A9-5JG">
@@ -842,7 +843,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYo-UM-iol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4742" y="383"/>
+            <point key="canvasLocation" x="5684" y="382.75862068965517"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uuw-W9-9s0">
@@ -945,11 +946,47 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7g-nZ-J2o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3209" y="383"/>
+            <point key="canvasLocation" x="4151.1999999999998" y="382.75862068965517"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="y8a-pm-Kxy">
+            <objects>
+                <tabBarController storyboardIdentifier="Mainpage" automaticallyAdjustsScrollViewInsets="NO" id="x85-jq-wST" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="lKv-pz-L0l"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zhu-Vj-YzY">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="33Q-Bo-zac" kind="relationship" relationship="viewControllers" id="ePz-cX-3lC"/>
+                        <segue destination="ILT-Dj-eOA" kind="relationship" relationship="viewControllers" id="i2d-e3-ThR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pev-63-OoK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2484" y="382.75862068965517"/>
+        </scene>
+        <!--Matches-->
+        <scene sceneID="0ER-Y1-E0s">
+            <objects>
+                <viewController id="ILT-Dj-eOA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BQ4-hD-kPL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pl0-Td-2w4"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Matches" image="heart.fill" catalog="system" id="k2Q-U7-k4E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3FN-rj-ugh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3556" y="1116"/>
         </scene>
     </scenes>
     <resources>
         <image name="heart.circle" catalog="system" width="128" height="121"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="xmark.circle" catalog="system" width="128" height="121"/>
