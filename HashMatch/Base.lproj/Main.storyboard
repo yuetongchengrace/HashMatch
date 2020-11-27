@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OH6-go-cGl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666.6666666666667" y="-299.33035714285711"/>
+            <point key="canvasLocation" x="1694" y="-300"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -308,6 +308,9 @@ EExhc3QgTmFtZQ
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="XgN-pC-hz6" kind="push" id="BIj-D8-TDd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -567,11 +570,11 @@ EExhc3QgTmFtZQ
             <objects>
                 <viewController id="XgN-pC-hz6" customClass="OnboardingDescribeYourselfVC" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ol4-eY-hX1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kJ-BN-cnN">
-                                <rect key="frame" x="224" y="711" width="120" height="40"/>
+                                <rect key="frame" x="224" y="657" width="120" height="40"/>
                                 <color key="backgroundColor" red="0.4549019608" green="0.64313725489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9Rw-If-yCk"/>
@@ -582,13 +585,13 @@ EExhc3QgTmFtZQ
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCm-EL-s3i">
-                                <rect key="frame" x="75" y="84" width="225" height="38"/>
+                                <rect key="frame" x="75" y="40" width="225" height="38"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="25"/>
                                 <color key="textColor" red="0.45303695579999997" green="0.64313725489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Let everyone know a little more about yourself by adding it to your profile." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j2E-UB-by6">
-                                <rect key="frame" x="31" y="130" width="313" height="64"/>
+                                <rect key="frame" x="31" y="351" width="313" height="64"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="sxz-KC-aSG"/>
@@ -598,7 +601,7 @@ EExhc3QgTmFtZQ
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Describe yourself in a few sentences or more." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="omh-8u-NdK">
-                                <rect key="frame" x="31" y="199" width="313" height="235"/>
+                                <rect key="frame" x="31" y="420" width="313" height="235"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="235" id="2ip-JA-Tn1"/>
@@ -607,32 +610,57 @@ EExhc3QgTmFtZQ
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xFv-IM-gPV">
+                                <rect key="frame" x="97.666666666666686" y="123" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="CSK-Ln-cZE"/>
+                                    <constraint firstAttribute="width" constant="180" id="JXe-IZ-LIa"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Choose a profile picture" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1SY-9q-wOB">
+                                <rect key="frame" x="10" y="83" width="355" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gh7-Fq-FnM"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iCm-EL-s3i" firstAttribute="top" secondItem="bGG-01-Xxu" secondAttribute="top" constant="40" id="3qV-vm-DWt"/>
                             <constraint firstItem="bGG-01-Xxu" firstAttribute="bottom" secondItem="6kJ-BN-cnN" secondAttribute="bottom" constant="27" id="4A2-F3-qLY"/>
-                            <constraint firstItem="j2E-UB-by6" firstAttribute="top" secondItem="iCm-EL-s3i" secondAttribute="bottom" constant="8" symbolic="YES" id="5q9-je-7Sg"/>
+                            <constraint firstItem="j2E-UB-by6" firstAttribute="top" secondItem="iCm-EL-s3i" secondAttribute="bottom" constant="273" id="5q9-je-7Sg"/>
+                            <constraint firstItem="1SY-9q-wOB" firstAttribute="top" secondItem="iCm-EL-s3i" secondAttribute="bottom" constant="5" id="5yg-um-qAC"/>
                             <constraint firstItem="omh-8u-NdK" firstAttribute="top" secondItem="j2E-UB-by6" secondAttribute="bottom" constant="5" id="LiD-Hv-2a2"/>
                             <constraint firstItem="iCm-EL-s3i" firstAttribute="leading" secondItem="bGG-01-Xxu" secondAttribute="leading" constant="75" id="Nbv-TW-VVF"/>
+                            <constraint firstItem="xFv-IM-gPV" firstAttribute="top" secondItem="1SY-9q-wOB" secondAttribute="bottom" constant="10" id="Oal-1i-Q2T"/>
                             <constraint firstItem="6kJ-BN-cnN" firstAttribute="leading" secondItem="bGG-01-Xxu" secondAttribute="leading" constant="224" id="Q7j-sQ-tMO"/>
                             <constraint firstItem="j2E-UB-by6" firstAttribute="leading" secondItem="bGG-01-Xxu" secondAttribute="leading" constant="31" id="QIl-Fq-VFd"/>
                             <constraint firstItem="iCm-EL-s3i" firstAttribute="centerX" secondItem="j2E-UB-by6" secondAttribute="centerX" id="QKO-DX-tds"/>
                             <constraint firstItem="iCm-EL-s3i" firstAttribute="centerX" secondItem="ol4-eY-hX1" secondAttribute="centerX" id="R57-dO-1Fv"/>
                             <constraint firstItem="j2E-UB-by6" firstAttribute="leading" secondItem="omh-8u-NdK" secondAttribute="leading" id="Reh-xh-4kP"/>
+                            <constraint firstItem="1SY-9q-wOB" firstAttribute="leading" secondItem="bGG-01-Xxu" secondAttribute="leading" constant="10" id="e3Y-ru-dFv"/>
+                            <constraint firstItem="1SY-9q-wOB" firstAttribute="centerX" secondItem="iCm-EL-s3i" secondAttribute="centerX" id="jui-s1-qZY"/>
+                            <constraint firstItem="xFv-IM-gPV" firstAttribute="centerX" secondItem="iCm-EL-s3i" secondAttribute="centerX" id="nAI-Gc-rZM"/>
+                            <constraint firstItem="bGG-01-Xxu" firstAttribute="trailing" secondItem="1SY-9q-wOB" secondAttribute="trailing" constant="10" id="qDE-Re-Uyh"/>
                             <constraint firstItem="omh-8u-NdK" firstAttribute="trailing" secondItem="6kJ-BN-cnN" secondAttribute="trailing" id="wZC-dg-fpf"/>
                             <constraint firstItem="j2E-UB-by6" firstAttribute="trailing" secondItem="omh-8u-NdK" secondAttribute="trailing" id="yhq-cp-SQn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bGG-01-Xxu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jFa-zi-c0Y"/>
                     <connections>
                         <outlet property="describeYourselfTextView" destination="omh-8u-NdK" id="LqX-oI-8sw"/>
+                        <outlet property="imageView" destination="xFv-IM-gPV" id="zDM-7F-O0H"/>
                         <outlet property="nextbtn" destination="6kJ-BN-cnN" id="eyJ-YQ-F7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NO4-c9-wkk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3170" y="-300"/>
+            <point key="canvasLocation" x="3168.8000000000002" y="-300"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5ts-Gy-wYP">
@@ -955,6 +983,7 @@ EExhc3QgTmFtZQ
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lKv-pz-L0l"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zhu-Vj-YzY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
