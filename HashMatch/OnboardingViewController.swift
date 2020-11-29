@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class OnboardingViewController: UIViewController {
 
@@ -55,11 +56,23 @@ class OnboardingViewController: UIViewController {
              })
             popup.addAction(ok)
             self.present(popup, animated: true, completion: nil)
+            
          }
-        
-        // *Add to the database / add to local storage first and then put everything into the database
-        // Firestore.first
-        
+        else{
+            // *Add to the database / add to local storage first and then put everything into the database
+           let db = Firestore.firestore()
+           let fName = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+           let lName = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+           db.collection("users").addDocument(data: [
+               "firstName": fName,
+               "lastName": lName
+               // Continue adding other informations into the database! currently only have first and last name
+           ]) { err in
+               if let err = err {
+                   print("Error adding document: \(err)")
+               }
+           }
+}
         // Push the next page after everything is success (segue is working now?)
     }
 }
