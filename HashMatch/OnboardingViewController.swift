@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class OnboardingViewController: UIViewController {
 
@@ -57,7 +58,7 @@ class OnboardingViewController: UIViewController {
          }
         
         // *Add to the database / add to local storage first and then put everything into the database
-        
+        // Firestore.first
         
         // Push the next page after everything is success (segue is working now?)
     }
