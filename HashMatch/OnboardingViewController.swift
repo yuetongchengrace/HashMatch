@@ -10,6 +10,18 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var age: UITextField!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var state: UITextField!
+    @IBOutlet weak var education: UITextField!
+    @IBOutlet weak var fieldOfEngineering: UITextField!
+    @IBOutlet weak var occupation: UITextField!
+    
+    //For gender and sexuality, maybe we should provide options for them to pick from?
+    //I didn't add outlet for those two yet
+    
     @IBOutlet weak var nextBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +29,37 @@ class OnboardingViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         // Do any additional setup after loading the view.
         nextBtn.applyPrimaryBtnDesign()
+    }
+    func checkInput () -> String?{
+      if firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || age.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        city.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        state.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        education.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        fieldOfEngineering.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        occupation.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+        
+          return "Please fill in all fields"
+      }
+      return nil
+    }
+    @IBAction func nextClicked(_ sender: Any) {
+        // Check if all user input fields are non-empty and in the correct format
+        let err = checkInput();
+        if err != nil{
+            let popup = UIAlertController(title: "Confirm", message: "Make sure you implement all fields", preferredStyle: .alert)
+            
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: "Got it!", style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+             })
+            popup.addAction(ok)
+            self.present(popup, animated: true, completion: nil)
+         }
+        
+        // *Add to the database / add to local storage first and then put everything into the database
+        
+        
+        // Push the next page after everything is success (segue is working now?)
     }
 }
 extension UIButton{

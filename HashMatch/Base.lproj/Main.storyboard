@@ -309,6 +309,7 @@ EExhc3QgTmFtZQ
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextClicked:" destination="Ra9-U1-Htt" eventType="touchUpInside" id="fsQ-RF-AsM"/>
                                     <segue destination="XgN-pC-hz6" kind="push" id="BIj-D8-TDd"/>
                                 </connections>
                             </button>
@@ -358,7 +359,15 @@ EExhc3QgTmFtZQ
                     </view>
                     <navigationItem key="navigationItem" id="OKO-vR-YC2"/>
                     <connections>
+                        <outlet property="age" destination="UVU-N7-4jf" id="sU0-xG-Yru"/>
+                        <outlet property="city" destination="ITY-Y3-JDh" id="Tn2-RP-9fx"/>
+                        <outlet property="education" destination="M9y-yX-PbI" id="e5V-vC-oJ3"/>
+                        <outlet property="fieldOfEngineering" destination="X12-rX-1SV" id="64C-tR-FaN"/>
+                        <outlet property="firstName" destination="gCI-0b-WZg" id="1Th-1W-M0M"/>
+                        <outlet property="lastName" destination="8yb-Ul-6iQ" id="KfD-y6-2uT"/>
                         <outlet property="nextBtn" destination="H3r-O4-Ac4" id="NGc-nh-bNT"/>
+                        <outlet property="occupation" destination="iNA-dG-Wka" id="Kce-dv-hgx"/>
+                        <outlet property="state" destination="6PY-Uh-dxt" id="arg-q7-tCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7IT-h3-JVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -24,7 +24,13 @@ class SignupViewController: UIViewController {
         if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || retypePassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             return "Please fill in all fields"
         }
+        
+        if(retypePassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) !=  password.text?.trimmingCharacters(in: .whitespacesAndNewlines)){
+            return "passwords do not match"
+        }
+        
         return nil
+        
     }
     @IBAction func signupTapped(_ sender: Any) {
         let err = checkInput();
@@ -40,6 +46,12 @@ class SignupViewController: UIViewController {
                 if error != nil{
                     //there was some error
                     self.errorLabel.text = "error while creating user"
+                    
+                    //TODO: Specify what type of error we encountered:
+                    //For example, if password is too short, it should show
+                    //something like "password should be at least 6 characters long"
+                    
+                    
                     self.errorLabel.alpha = 1
                     print(self.email!.text!)
                     print(self.password!.text!)
