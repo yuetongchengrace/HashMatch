@@ -415,7 +415,7 @@ EExhc3QgTmFtZQ
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="WA3-Ol-Mpk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="13"/>
-                                        <state key="normal" title="Answer 1">
+                                        <state key="normal" title="Python - Everyone knows me ... barely">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -426,7 +426,7 @@ EExhc3QgTmFtZQ
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="b9W-Ru-wxA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="13"/>
-                                        <state key="normal" title="Answer 2">
+                                        <state key="normal" title="Java - Im pretty likeable">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -437,7 +437,7 @@ EExhc3QgTmFtZQ
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="FJE-n3-dlA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="13"/>
-                                        <state key="normal" title="Answer 3">
+                                        <state key="normal" title="Matlab - Im not picky">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -448,7 +448,7 @@ EExhc3QgTmFtZQ
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="SBf-CJ-li9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="13"/>
-                                        <state key="normal" title="Answer 4">
+                                        <state key="normal" title="Swift - You'll spend hours trying to fix one issue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -457,7 +457,7 @@ EExhc3QgTmFtZQ
                                     <constraint firstAttribute="width" constant="313" id="ddJ-KW-27O"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="1. [Sample question text here here]" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="idd-uH-nwZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="1. What coding language are you?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="idd-uH-nwZ">
                                 <rect key="frame" x="31" y="119" width="313" height="64.000000000000014"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
