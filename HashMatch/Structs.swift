@@ -11,5 +11,5 @@ import Foundation
 struct Person {
     let firstName: String
     let lastName: String
-    let id: String
+    let uid: String
 }

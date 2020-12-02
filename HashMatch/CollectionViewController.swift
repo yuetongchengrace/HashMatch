@@ -13,14 +13,13 @@ import FirebaseFirestore
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var userId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         // Do any additional setup after loading the view.
-        if let uid = UserDefaults.standard.string(forKey: "user") {
-            print(uid)
-            //this is the current user's UID
+        if let id = UserDefaults.standard.string(forKey: "user"){
+            userId = id
         }
         fetchData()
         setUpCollectionView()
@@ -41,16 +40,17 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             } else {
                 // all key value pairs
                 for document in querySnapshot!.documents {
-                    
                     print("\(document.documentID) => \(document.data())")
                     let data = document.data()
                     let firstName = data["firstName"] as? String ?? ""
                     let lastName = data["lastName"] as? String ?? ""
-                    let id = document.documentID
-                    let newPerson = Person(firstName: firstName, lastName: lastName, id: id)
-                    // print(newPerson)
-                    self.people.append(newPerson)
-                    // print(self.people)
+                    let uid = data["uid"] as? String ?? ""
+                    if uid != self.userId{
+                        let newPerson = Person(firstName: firstName, lastName: lastName, uid: uid)
+                        print(uid)
+                        self.people.append(newPerson)
+                        // print(self.people)
+                    }
                 }
                 self.collectionView.reloadData()
             }

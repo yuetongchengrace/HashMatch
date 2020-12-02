@@ -66,7 +66,8 @@ class OnboardingViewController: UIViewController {
            let lName = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
            db.collection("users").addDocument(data: [
                "firstName": fName,
-               "lastName": lName
+               "lastName": lName,
+                "uid": UserDefaults.standard.string(forKey: "user")!
                // Continue adding other informations into the database! currently only have first and last name
            ]) { err in
                if let err = err {
