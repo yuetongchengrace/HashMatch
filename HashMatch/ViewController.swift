@@ -8,13 +8,26 @@
 
 import UIKit
 
+//Login or signup page
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: "isUserSignedIn"){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "Mainpage")
+            self.navigationController?.pushViewController(viewController, animated: true)
+            // self.present(viewController, animated: true, completion: nil)
+        }
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+           navigationController?.setNavigationBarHidden(false, animated: false)
+       }
+    
     // TEST COMMENT !!!
 
 }

@@ -505,8 +505,9 @@ EExhc3QgTmFtZQ
         <!--Navigation Controller-->
         <scene sceneID="Q7H-ja-NnK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0OU-Fa-Wbp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="baseVC" automaticallyAdjustsScrollViewInsets="NO" id="0OU-Fa-Wbp" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fl4-G1-Wlt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="21K-xv-3ag">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -558,7 +559,7 @@ EExhc3QgTmFtZQ
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5xI-kr-EBf">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="5xI-kr-EBf" customClass="PersonCell" customModule="HashMatch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="R5F-Gc-R8F">
@@ -573,6 +574,9 @@ EExhc3QgTmFtZQ
                         <viewLayoutGuide key="safeArea" id="ZXe-kB-5xZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="QJg-vg-mXK"/>
+                    <connections>
+                        <outlet property="collectionView" destination="kUi-dS-daa" id="vw5-0o-fu6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="682-AK-akR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1006,11 +1010,39 @@ EExhc3QgTmFtZQ
                     <connections>
                         <segue destination="33Q-Bo-zac" kind="relationship" relationship="viewControllers" id="ePz-cX-3lC"/>
                         <segue destination="ILT-Dj-eOA" kind="relationship" relationship="viewControllers" id="i2d-e3-ThR"/>
+                        <segue destination="Qca-Bx-WkI" kind="relationship" relationship="viewControllers" id="XGX-EC-LBg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pev-63-OoK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="382.75862068965517"/>
+            <point key="canvasLocation" x="2484" y="429"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="sws-Fu-9pA">
+            <objects>
+                <viewController id="Qca-Bx-WkI" customClass="LogoutViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L5y-9x-rdb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UC9-WF-Q1u">
+                                <rect key="frame" x="267" y="33" width="78" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="Qca-Bx-WkI" eventType="touchUpInside" id="9Fk-NS-AtH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="H3q-Df-pKR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" id="WIw-2e-feD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l7N-5e-bpT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2484" y="1309.3596059113302"/>
         </scene>
         <!--Matches-->
         <scene sceneID="0ER-Y1-E0s">
@@ -1034,6 +1066,7 @@ EExhc3QgTmFtZQ
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="xmark.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

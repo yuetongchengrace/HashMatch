@@ -57,6 +57,11 @@ class SignupViewController: UIViewController {
                     print(self.password!.text!)
                 }
                 else{
+                    let defaults = UserDefaults.standard
+                    defaults.set(true, forKey: "isUserSignedIn")
+                    if let id = Auth.auth().currentUser?.uid{
+                        defaults.set(id ,forKey: "user")
+                    }
                     //transition to the next screen which should be the onboarding questions
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let secondViewController = storyboard.instantiateViewController(withIdentifier: "Onboarding1")

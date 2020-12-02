@@ -42,6 +42,11 @@ class LoginViewController: UIViewController {
                 }
                 else{
                     //signed in successfully
+                    let defaults = UserDefaults.standard
+                    defaults.set(true, forKey: "isUserSignedIn")
+                    if let id = Auth.auth().currentUser?.uid{
+                        defaults.set(id ,forKey: "user")
+                    }
                     //Go to main collection View
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let secondViewController = storyboard.instantiateViewController(withIdentifier: "Mainpage")
