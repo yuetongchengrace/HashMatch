@@ -32,6 +32,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.delegate = self
         collectionView.register(PersonCell.self , forCellWithReuseIdentifier: "cell")
     }
+    //get all user data from firestore and saving into the people array
     func fetchData(){
         let db = Firestore.firestore()
         db.collection("users").getDocuments() { (querySnapshot, err) in

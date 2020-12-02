@@ -57,6 +57,7 @@ class SignupViewController: UIViewController {
                     print(self.password!.text!)
                 }
                 else{
+                     //signed in successfully, save to user default
                     let defaults = UserDefaults.standard
                     defaults.set(true, forKey: "isUserSignedIn")
                     if let id = Auth.auth().currentUser?.uid{

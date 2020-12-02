@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//Class for custom view controller cell
 class PersonCell: UICollectionViewCell {
     let pic = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 140))
     let name = UILabel(frame: CGRect(x: 0, y: 140, width: 150, height: 60))

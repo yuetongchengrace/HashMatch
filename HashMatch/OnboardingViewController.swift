@@ -32,6 +32,7 @@ class OnboardingViewController: UIViewController {
         // Do any additional setup after loading the view.
         nextBtn.applyPrimaryBtnDesign()
     }
+    //Make sure none of the input fields is empty
     func checkInput () -> String?{
       if firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || age.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
         city.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||

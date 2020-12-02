@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+//This is the user setting page
+//We can pull user information from the users collection and display on corresponding fields
 class LogoutViewController: UIViewController {
 
     override func viewDidLoad() {
