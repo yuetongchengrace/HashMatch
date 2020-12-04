@@ -14,7 +14,7 @@ class OnboardingDescribeYourselfVC: UIViewController {
     @IBOutlet weak var describeYourselfTextView: UITextView!
     
     @IBOutlet weak var imageView: UIImageView!
-    
+  
     var email: String = ""
     
     
@@ -48,21 +48,41 @@ class OnboardingDescribeYourselfVC: UIViewController {
         uploadPicture()
     }
     
+    func checkInput () -> String?{
+       if describeYourselfTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+           return "Please fill in all fields"
+       }
+       return nil
+    }
+    
     func uploadPicture() {
-        guard let image = imageView.image,
-            let data = image.pngData() else {
-                return
+        let err = checkInput ()
+        if err != nil{
+            self.alertError()
         }
-        let filename = "\(email)_profpic.png"
-        StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
-            switch result {
-            case .success(let downloadUrl):
-                UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
-                print(downloadUrl)
-            case .failure(let error):
-                print("Storage manager error: \(error)")
+        else{
+            guard let image = imageView.image,
+                let data = image.pngData() else {
+                    return
             }
-        })
+            let filename = "\(email)_profpic.png"
+            StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
+                switch result {
+                case .success(let downloadUrl):
+                    UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                    print(downloadUrl)
+                    DatabaseManager.shared.insertPhoto(with: self.email, url: downloadUrl, description: self.describeYourselfTextView.text!)
+                case .failure(let error):
+                    print("Storage manager error: \(error)")
+                }
+            })
+            
+        }
+    }
+    func alertError(message: String = "Please answer all fields.") {
+       let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+       alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+       present(alert, animated: true)
     }
     
 }

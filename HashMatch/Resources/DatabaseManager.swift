@@ -39,6 +39,10 @@ extension DatabaseManager {
     public func insertUser(with user: User) {
         database.collection("users").document(user.emailAddress).setData(["firstName": user.firstName, "lastName": user.lastName, "uid": user.uid])
     }
+    //insert photo
+    public func insertPhoto(with email: String, url: String, description: String) {
+        database.collection("users").document(email).setData(["photo": url, "description": description], merge: true)
+    }
 }
 
 struct User {
