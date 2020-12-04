@@ -52,18 +52,6 @@ class OnboardingViewController: UIViewController {
         let err = checkInput();
         if err != nil{
             self.alertSignUpError()
-            /*
-            let popup = UIAlertController(title: "Confirm", message: "Make sure you implement all fields", preferredStyle: .alert)
-            
-            // Create OK button with action handler
-            let ok = UIAlertAction(title: "Got it!", style: .default, handler: { (action) -> Void in
-                print("Ok button tapped")
-            })
-            popup.addAction(ok)
-            self.present(popup, animated: true, completion: nil)
- 
-             */
-            
         }
         else{
             
