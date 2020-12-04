@@ -33,6 +33,18 @@ class SignupViewController: UIViewController {
         
     }
     @IBAction func signupTapped(_ sender: Any) {
+        
+        DatabaseManager.shared.userExists(with: email.text!, completion: { [weak self] exists in
+        guard let strongSelf = self else {
+            return
+        }
+            
+        guard !exists else {
+            strongSelf.alertSignUpError(message: "Looks like an account for that email already exists")
+            return
+        }
+        })
+        
         let err = checkInput();
         if err != nil{
             errorLabel.text = err!
@@ -65,22 +77,32 @@ class SignupViewController: UIViewController {
                     }
                     //transition to the next screen which should be the onboarding questions
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let secondViewController = storyboard.instantiateViewController(withIdentifier: "Onboarding1")
+                    let secondViewController = storyboard.instantiateViewController(withIdentifier: "Onboarding1") as? OnboardingViewController
+                    secondViewController!.email = self.email.text!
                     //self.present(secondViewController, animated: true, completion: nil)
-                    self.navigationController?.pushViewController(secondViewController, animated: true)
+                    self.navigationController?.pushViewController(secondViewController!, animated: true)
                 }
             }
         }
     }
     
-    /*
+    func alertSignUpError(message: String = "Please answer all fields.") {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is OnboardingViewController
+        {
+            let vc = segue.destination as? OnboardingViewController
+            vc?.email = email.text!
+        }
     }
-    */
-
+     */
 }

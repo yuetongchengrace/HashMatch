@@ -15,6 +15,8 @@ class OnboardingDescribeYourselfVC: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var email: String = ""
+    
     
     
     override func viewDidLoad() {
@@ -41,6 +43,28 @@ class OnboardingDescribeYourselfVC: UIViewController {
     @objc private func changeProfilePic() {
         presentPhotoActionSheet()
     }
+    
+    @IBAction func nextPressed(_ sender: Any) {
+        uploadPicture()
+    }
+    
+    func uploadPicture() {
+        guard let image = imageView.image,
+            let data = image.pngData() else {
+                return
+        }
+        let filename = "\(email)_profpic.png"
+        StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
+            switch result {
+            case .success(let downloadUrl):
+                UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                print(downloadUrl)
+            case .failure(let error):
+                print("Storage manager error: \(error)")
+            }
+        })
+    }
+    
 }
 
 extension OnboardingDescribeYourselfVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

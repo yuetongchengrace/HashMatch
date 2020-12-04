@@ -601,6 +601,7 @@ EExhc3QgTmFtZQ
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextPressed:" destination="XgN-pC-hz6" eventType="touchUpInside" id="ipY-j9-thj"/>
                                     <segue destination="aYW-mT-BwV" kind="push" id="Rk1-47-Fhs"/>
                                 </connections>
                             </button>
