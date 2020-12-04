@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let defaults = UserDefaults.standard
-        if defaults.bool(forKey: "isUserSignedIn"){
+        if UserDefaults.standard.object(forKey: "isUserSignedIn") != nil && defaults.bool(forKey: "isUserSignedIn"){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "Mainpage")
             self.navigationController?.pushViewController(viewController, animated: true)

@@ -33,24 +33,22 @@ class SignupViewController: UIViewController {
         
     }
     @IBAction func signupTapped(_ sender: Any) {
-        
-        DatabaseManager.shared.userExists(with: email.text!, completion: { [weak self] exists in
-        guard let strongSelf = self else {
-            return
-        }
-            
-        guard !exists else {
-            strongSelf.alertSignUpError(message: "Looks like an account for that email already exists")
-            return
-        }
-        })
-        
         let err = checkInput();
         if err != nil{
             errorLabel.text = err!
             errorLabel.alpha = 1
         }
-        else{
+        else {
+            DatabaseManager.shared.userExists(with: email.text!, completion: { [weak self] exists in
+            guard let strongSelf = self else {
+                return
+            }
+                
+            guard !exists else {
+                strongSelf.alertSignUpError(message: "Looks like an account for that email already exists")
+                return
+            }
+            })
             Auth.auth().createUser(withEmail: email.text!, password: password.text! ){
                 (result, error) in
                 
