@@ -11,6 +11,8 @@ import UIKit
 class DetailedViewController: UIViewController {
     var person: Person?
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -20,6 +22,11 @@ class DetailedViewController: UIViewController {
         print(p.firstName)
         print(p.uid)
         
+        //add Image
+        let url = URL(string: p.photo)
+        if let img = try? Data(contentsOf: url!){
+            imageView.image = UIImage(data:img)
+        }
         //add corresponding information to the fields
         
         // Do any additional setup after loading the view.
