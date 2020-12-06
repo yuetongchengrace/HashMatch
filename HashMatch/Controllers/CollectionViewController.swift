@@ -26,6 +26,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     var people: [Person] = []
+    var images: [Int:UIImage] = [:]
+    
     func setUpCollectionView(){
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -45,16 +47,35 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     let firstName = data["firstName"] as? String ?? ""
                     let lastName = data["lastName"] as? String ?? ""
                     let uid = data["uid"] as? String ?? ""
+                    let photo = data["photo"] as? String ?? ""
                     if uid != self.userId{
-                        let newPerson = Person(firstName: firstName, lastName: lastName, uid: uid)
-                        print(uid)
+                        let newPerson = Person(firstName: firstName, lastName: lastName, uid: uid, photo: photo)
+                        //print(uid)
+                        //print(photo)
                         self.people.append(newPerson)
                         // print(self.people)
                     }
                 }
+                self.cacheImages()
                 self.collectionView.reloadData()
             }
         }
+    }
+    func cacheImages(){
+       for (index, person) in people.enumerated() {
+           let fullURL =  URL(string: person.photo)
+               // print(fullURL!)
+               do{
+                   let data = try Data(contentsOf: fullURL!)
+                   let img = UIImage(data:data)
+                   // print(index)
+                   images[index] = img!
+                   
+               }
+               catch {
+                   print("There was an error")
+               }
+           }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.people.count;
@@ -63,10 +84,24 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PersonCell
         cell.backgroundColor = UIColor.gray
+        cell.pic.image = images[indexPath.row]
         cell.name.text = people[indexPath.row].firstName + " " + people[indexPath.row].lastName
         cell.addSubview(cell.pic)
         cell.addSubview(cell.name)
         return cell as PersonCell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("touched")
+//        let detailedVC = DetailedViewController()
+//        detailedVC
+//
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let secondViewController  = storyboard.instantiateViewController(withIdentifier: "Detailpage") as? DetailedViewController else { return }
+        secondViewController.person = people[indexPath.row]
+        // self.present(secondViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(secondViewController, animated: true)
         
     }
     

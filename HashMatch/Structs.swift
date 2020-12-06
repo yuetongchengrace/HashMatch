@@ -12,4 +12,5 @@ struct Person {
     let firstName: String
     let lastName: String
     let uid: String
+    let photo: String
 }
