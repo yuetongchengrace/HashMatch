@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionnaireViewController3 {
+class QuestionnaireViewController3: UIViewController  {
     
     @IBOutlet weak var nextbtn: UIButton!
     @IBOutlet weak var questionnaireAns1: UIButton!
@@ -18,8 +18,8 @@ class QuestionnaireViewController3 {
         nextbtn.applyPrimaryBtnDesign()
         questionnaireAns1.applyPrimaryBtnDesign()
         questionnaireAns2.applyPrimaryBtnDesign()
-        questionnaireAns3.applyPrimaryBtnDesign()
-        questionnaireAns4.applyPrimaryBtnDesign()
+//        questionnaireAns3.applyPrimaryBtnDesign()
+//        questionnaireAns4.applyPrimaryBtnDesign()
     }
     
     

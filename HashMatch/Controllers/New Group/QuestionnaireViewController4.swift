@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionnaireViewController4 {
+class QuestionnaireViewController4: UIViewController  {
     
     @IBOutlet weak var nextbtn: UIButton!
     @IBOutlet weak var questionnaireAns1: UIButton!
