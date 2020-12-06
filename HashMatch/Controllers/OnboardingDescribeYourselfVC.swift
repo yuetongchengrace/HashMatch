@@ -65,7 +65,7 @@ class OnboardingDescribeYourselfVC: UIViewController {
                 let data = image.pngData() else {
                     return
             }
-            let filename = "\(email)_profpic.png"
+            let filename = "\(email).png"
             StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
                 switch result {
                 case .success(let downloadUrl):

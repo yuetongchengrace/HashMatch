@@ -46,12 +46,14 @@ extension DatabaseManager {
 }
 
 struct User {
-    let firstName: String
-    let lastName: String
+    var firstName: String
+    var lastName: String
     let emailAddress: String
     let uid: String
+    var likes: [String]
+    var matches: [String]
     
     var profilePictureFileName: String {
-        return "\(emailAddress)_profpic.png"
+        return "\(emailAddress).png"
     }
 }

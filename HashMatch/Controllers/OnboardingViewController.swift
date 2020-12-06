@@ -57,7 +57,7 @@ class OnboardingViewController: UIViewController {
             
             let fName = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lName = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            DatabaseManager.shared.insertUser(with: User(firstName: fName, lastName: lName, emailAddress: email, uid: UserDefaults.standard.string(forKey: "user")!))
+            DatabaseManager.shared.insertUser(with: User(firstName: fName, lastName: lName, emailAddress: email, uid: UserDefaults.standard.string(forKey: "user")!, likes: [String](), matches: [String]()))
         
         // *Add to the database / add to local storage first and then put everything into the database
         /*
