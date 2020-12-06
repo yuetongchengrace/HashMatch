@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FF22C35257D4CDA0023F9AF /* QuestionnaireViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF22C34257D4CDA0023F9AF /* QuestionnaireViewController2.swift */; };
+		0FF22C39257D519F0023F9AF /* QuestionnaireViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF22C38257D519F0023F9AF /* QuestionnaireViewController3.swift */; };
+		0FF22C3B257D523C0023F9AF /* QuestionnaireViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF22C3A257D523C0023F9AF /* QuestionnaireViewController4.swift */; };
 		2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */; };
 		2419F045256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */; };
 		2419F049256C483600D9F7CE /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F048256C483600D9F7CE /* QuestionnaireViewController.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FF22C34257D4CDA0023F9AF /* QuestionnaireViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController2.swift; sourceTree = "<group>"; };
+		0FF22C38257D519F0023F9AF /* QuestionnaireViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController3.swift; sourceTree = "<group>"; };
+		0FF22C3A257D523C0023F9AF /* QuestionnaireViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController4.swift; sourceTree = "<group>"; };
 		2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescribeYourselfVC.swift; sourceTree = "<group>"; };
 		2419F048256C483600D9F7CE /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
@@ -68,15 +74,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FF22C33257D4C610023F9AF /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				2419F048256C483600D9F7CE /* QuestionnaireViewController.swift */,
+				0FF22C34257D4CDA0023F9AF /* QuestionnaireViewController2.swift */,
+				0FF22C38257D519F0023F9AF /* QuestionnaireViewController3.swift */,
+				0FF22C3A257D523C0023F9AF /* QuestionnaireViewController4.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		62B1585D2579F26800594CF5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0FF22C33257D4C610023F9AF /* New Group */,
 				DB33B313257A28CA004763F0 /* LoginViewController.swift */,
 				2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */,
 				DB88DFBE256C7C8800D2A4F6 /* CollectionViewController.swift */,
 				DB40BA34257C81A300A0D6BE /* DetailedViewController.swift */,
 				2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */,
-				2419F048256C483600D9F7CE /* QuestionnaireViewController.swift */,
 				DB46A19B25691D5400903890 /* SignupViewController.swift */,
 				DB46A18B25691C6B00903890 /* ViewController.swift */,
 				DBDAF5B425777F8D00620CFC /* LogoutViewController.swift */,
@@ -271,10 +288,13 @@
 				2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */,
 				DBDAF5B3257766A400620CFC /* Structs.swift in Sources */,
 				DB46A18825691C6B00903890 /* AppDelegate.swift in Sources */,
+				0FF22C35257D4CDA0023F9AF /* QuestionnaireViewController2.swift in Sources */,
 				DB46A19C25691D5400903890 /* SignupViewController.swift in Sources */,
 				DBDAF5B12577650200620CFC /* PersonCell.swift in Sources */,
 				DB46A18A25691C6B00903890 /* SceneDelegate.swift in Sources */,
+				0FF22C39257D519F0023F9AF /* QuestionnaireViewController3.swift in Sources */,
 				2419F049256C483600D9F7CE /* QuestionnaireViewController.swift in Sources */,
+				0FF22C3B257D523C0023F9AF /* QuestionnaireViewController4.swift in Sources */,
 				DBDAF5B525777F8D00620CFC /* LogoutViewController.swift in Sources */,
 				2419F045256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift in Sources */,
 			);
