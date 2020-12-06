@@ -24,4 +24,7 @@ class QuestionnaireViewController2 {
         questionnaireAns4.applyPrimaryBtnDesign()
     }
     
+    @IBAction func pressedPartying(_ sender: Any) {
+    }
+    
 }

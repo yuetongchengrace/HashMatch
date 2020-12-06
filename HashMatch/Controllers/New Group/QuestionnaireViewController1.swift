@@ -1,16 +1,14 @@
 //
-//  QuestionnaireViewController.swift
+//  QuestionnaireViewController1.swift
 //  HashMatch
 //
-//  Created by Ashley Lin on 11/23/20.
+//  Created by Aaron Ocken on 12/6/20.
 //  Copyright © 2020 Yuetong Chen. All rights reserved.
 //
 
 import UIKit
 
-class QuestionnaireViewController: UIViewController {
-
-
+class QuestionnaireViewController1 {
     @IBOutlet weak var nextbtn: UIButton!
     @IBOutlet weak var questionnaireAns1: UIButton!
     @IBOutlet weak var questionnaireAns2: UIButton!
@@ -24,4 +22,5 @@ class QuestionnaireViewController: UIViewController {
         questionnaireAns3.applyPrimaryBtnDesign()
         questionnaireAns4.applyPrimaryBtnDesign()
     }
+    
 }
