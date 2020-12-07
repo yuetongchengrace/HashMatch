@@ -21,6 +21,12 @@ class DetailedViewController: UIViewController {
         print(p.lastName)
         print(p.firstName)
         print(p.uid)
+        print(p.age)
+        print(p.city)
+        print(p.state)
+        print(p.education)
+        print(p.fieldOfEngineering)
+        print(p.occupation)
         
         //add Image
         let url = URL(string: p.photo)

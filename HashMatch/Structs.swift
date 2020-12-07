@@ -13,4 +13,13 @@ struct Person {
     let lastName: String
     let uid: String
     let photo: String
+    let age: String
+    let city: String
+    let state: String
+    let education: String
+    let fieldOfEngineering: String
+    let occupation: String
+    var likes: [String]
+    var matches: [String]
+    
 }
