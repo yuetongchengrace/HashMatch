@@ -37,7 +37,7 @@ extension DatabaseManager {
     
     // Inserts new user to database
     public func insertUser(with user: User) {
-        database.collection("users").document(user.emailAddress).setData(["firstName": user.firstName, "lastName": user.lastName, "uid": user.uid])
+        database.collection("users").document(user.emailAddress).setData(["firstName": user.firstName, "lastName": user.lastName, "uid": user.uid, "age": user.age, "city":user.city, "state": user.state, "education": user.education, "fieldOfEngineering": user.fieldOfEngineering, "occupation": user.occupation, "likes": user.likes, "matches": user.matches])
     }
     //insert photo
     public func insertPhoto(with email: String, url: String, description: String) {
@@ -50,6 +50,12 @@ struct User {
     var lastName: String
     let emailAddress: String
     let uid: String
+    let age: String
+    let city: String
+    let state: String
+    let education: String
+    let fieldOfEngineering: String
+    let occupation: String
     var likes: [String]
     var matches: [String]
     

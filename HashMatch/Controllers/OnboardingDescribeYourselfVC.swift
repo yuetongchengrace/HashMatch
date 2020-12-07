@@ -46,6 +46,7 @@ class OnboardingDescribeYourselfVC: UIViewController {
     
     @IBAction func nextPressed(_ sender: Any) {
         uploadPicture()
+        
     }
     
     func checkInput () -> String?{
@@ -72,6 +73,10 @@ class OnboardingDescribeYourselfVC: UIViewController {
                     UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
                     print(downloadUrl)
                     DatabaseManager.shared.insertPhoto(with: self.email, url: downloadUrl, description: self.describeYourselfTextView.text!)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let questionViewController1 = storyboard.instantiateViewController(withIdentifier: "Q1")
+                    // self.present(secondViewController, animated: true, completion: nil)
+                    self.navigationController?.pushViewController(questionViewController1, animated: true)
                 case .failure(let error):
                     print("Storage manager error: \(error)")
                 }

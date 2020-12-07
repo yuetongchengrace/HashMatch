@@ -63,19 +63,20 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     func cacheImages(){
        for (index, person) in people.enumerated() {
-           let fullURL =  URL(string: person.photo)
-               // print(fullURL!)
-               do{
-                   let data = try Data(contentsOf: fullURL!)
-                   let img = UIImage(data:data)
-                   // print(index)
-                   images[index] = img!
-                   
-               }
-               catch {
-                   print("There was an error")
-               }
+        if let fullURL =  URL(string: person.photo){
+           // print(fullURL!)
+           do{
+               let data = try Data(contentsOf: fullURL)
+               let img = UIImage(data:data)
+               // print(index)
+               images[index] = img!
+               
            }
+           catch {
+               print("There was an error")
+           }
+       }
+        }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.people.count;

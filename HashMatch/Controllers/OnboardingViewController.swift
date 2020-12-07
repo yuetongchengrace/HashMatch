@@ -57,7 +57,15 @@ class OnboardingViewController: UIViewController {
             
             let fName = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lName = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            DatabaseManager.shared.insertUser(with: User(firstName: fName, lastName: lName, emailAddress: email, uid: UserDefaults.standard.string(forKey: "user")!, likes: [String](), matches: [String]()))
+            let myAge =
+                age.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let myCity = city.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let myState = city.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let edu = education.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let field = fieldOfEngineering.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let occu = occupation.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            DatabaseManager.shared.insertUser(with: User(firstName: fName, lastName: lName, emailAddress: email, uid: UserDefaults.standard.string(forKey: "user")!, age: myAge, city: myCity,state: myState, education: edu, fieldOfEngineering: field, occupation: occu, likes: [String](), matches: [String]()))
         
         // *Add to the database / add to local storage first and then put everything into the database
         /*

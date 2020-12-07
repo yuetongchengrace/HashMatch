@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FF22C35257D4CDA0023F9AF /* QuestionnaireViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF22C34257D4CDA0023F9AF /* QuestionnaireViewController2.swift */; };
-		0FF22C39257D519F0023F9AF /* QuestionnaireViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF22C38257D519F0023F9AF /* QuestionnaireViewController3.swift */; };
-		0FF22C3B257D523C0023F9AF /* QuestionnaireViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF22C3A257D523C0023F9AF /* QuestionnaireViewController4.swift */; };
-		0FF22C3D257D78750023F9AF /* QuestionnaireViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF22C3C257D78750023F9AF /* QuestionnaireViewController1.swift */; };
 		2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */; };
 		2419F045256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */; };
 		62B1585F2579F6B900594CF5 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B1585E2579F6B900594CF5 /* DatabaseManager.swift */; };
@@ -30,13 +26,13 @@
 		DBDAF5B12577650200620CFC /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDAF5B02577650200620CFC /* PersonCell.swift */; };
 		DBDAF5B3257766A400620CFC /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDAF5B2257766A400620CFC /* Structs.swift */; };
 		DBDAF5B525777F8D00620CFC /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDAF5B425777F8D00620CFC /* LogoutViewController.swift */; };
+		DBF063DA257D9BDB0069D7B9 /* QuestionViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF063D9257D9BDB0069D7B9 /* QuestionViewController1.swift */; };
+		DBF063DC257D9F2C0069D7B9 /* QuestionViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF063DB257D9F2C0069D7B9 /* QuestionViewController2.swift */; };
+		DBF063DE257D9F380069D7B9 /* QuestionViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF063DD257D9F380069D7B9 /* QuestionViewController3.swift */; };
+		DBF063E0257D9F430069D7B9 /* QuestionViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF063DF257D9F430069D7B9 /* QuestionViewController4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FF22C34257D4CDA0023F9AF /* QuestionnaireViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController2.swift; sourceTree = "<group>"; };
-		0FF22C38257D519F0023F9AF /* QuestionnaireViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController3.swift; sourceTree = "<group>"; };
-		0FF22C3A257D523C0023F9AF /* QuestionnaireViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController4.swift; sourceTree = "<group>"; };
-		0FF22C3C257D78750023F9AF /* QuestionnaireViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController1.swift; sourceTree = "<group>"; };
 		2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescribeYourselfVC.swift; sourceTree = "<group>"; };
 		332BB559115EFBB37861AF50 /* Pods-HashMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HashMatch.debug.xcconfig"; path = "Target Support Files/Pods-HashMatch/Pods-HashMatch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +54,10 @@
 		DBDAF5B02577650200620CFC /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		DBDAF5B2257766A400620CFC /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		DBDAF5B425777F8D00620CFC /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		DBF063D9257D9BDB0069D7B9 /* QuestionViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController1.swift; sourceTree = "<group>"; };
+		DBF063DB257D9F2C0069D7B9 /* QuestionViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController2.swift; sourceTree = "<group>"; };
+		DBF063DD257D9F380069D7B9 /* QuestionViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController3.swift; sourceTree = "<group>"; };
+		DBF063DF257D9F430069D7B9 /* QuestionViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController4.swift; sourceTree = "<group>"; };
 		DDE326B5391A3E89674D02DC /* Pods_HashMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HashMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B02F0B60B69361F6067ADA /* Pods-HashMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HashMatch.release.xcconfig"; path = "Target Support Files/Pods-HashMatch/Pods-HashMatch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,10 +77,10 @@
 		0FF22C33257D4C610023F9AF /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				0FF22C3C257D78750023F9AF /* QuestionnaireViewController1.swift */,
-				0FF22C34257D4CDA0023F9AF /* QuestionnaireViewController2.swift */,
-				0FF22C38257D519F0023F9AF /* QuestionnaireViewController3.swift */,
-				0FF22C3A257D523C0023F9AF /* QuestionnaireViewController4.swift */,
+				DBF063D9257D9BDB0069D7B9 /* QuestionViewController1.swift */,
+				DBF063DB257D9F2C0069D7B9 /* QuestionViewController2.swift */,
+				DBF063DD257D9F380069D7B9 /* QuestionViewController3.swift */,
+				DBF063DF257D9F430069D7B9 /* QuestionViewController4.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -285,16 +285,16 @@
 				DB46A18C25691C6B00903890 /* ViewController.swift in Sources */,
 				62B1585F2579F6B900594CF5 /* DatabaseManager.swift in Sources */,
 				62B15862257A0BF300594CF5 /* StorageManager.swift in Sources */,
-				0FF22C3D257D78750023F9AF /* QuestionnaireViewController1.swift in Sources */,
+				DBF063DE257D9F380069D7B9 /* QuestionViewController3.swift in Sources */,
 				2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */,
 				DBDAF5B3257766A400620CFC /* Structs.swift in Sources */,
+				DBF063DC257D9F2C0069D7B9 /* QuestionViewController2.swift in Sources */,
 				DB46A18825691C6B00903890 /* AppDelegate.swift in Sources */,
-				0FF22C35257D4CDA0023F9AF /* QuestionnaireViewController2.swift in Sources */,
+				DBF063DA257D9BDB0069D7B9 /* QuestionViewController1.swift in Sources */,
 				DB46A19C25691D5400903890 /* SignupViewController.swift in Sources */,
 				DBDAF5B12577650200620CFC /* PersonCell.swift in Sources */,
 				DB46A18A25691C6B00903890 /* SceneDelegate.swift in Sources */,
-				0FF22C39257D519F0023F9AF /* QuestionnaireViewController3.swift in Sources */,
-				0FF22C3B257D523C0023F9AF /* QuestionnaireViewController4.swift in Sources */,
+				DBF063E0257D9F430069D7B9 /* QuestionViewController4.swift in Sources */,
 				DBDAF5B525777F8D00620CFC /* LogoutViewController.swift in Sources */,
 				2419F045256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift in Sources */,
 			);
