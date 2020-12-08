@@ -32,7 +32,26 @@ class QuestionViewController2: UIViewController {
         self.navigationController?.pushViewController(questionViewController3, animated: true)
     }
     
-
+    
+    @IBAction func partyingSelected(_ sender: Any) {
+        QuestionViewController1.score = 4 + QuestionViewController1.score
+    }
+    
+    
+    @IBAction func workingSelected(_ sender: Any) {
+        QuestionViewController1.score = 1 + QuestionViewController1.score
+    }
+    
+    
+    @IBAction func gamingSelected(_ sender: Any) {
+        QuestionViewController1.score = 2 + QuestionViewController1.score
+    }
+    
+    
+    @IBAction func netflixSelected(_ sender: Any) {
+        QuestionViewController1.score = 3 + QuestionViewController1.score
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -30,6 +30,15 @@ class QuestionViewController3: UIViewController {
                self.navigationController?.pushViewController(questionViewController4, animated: true)
     }
     
+    
+    @IBAction func yesSelected(_ sender: Any) {
+        QuestionViewController1.score = 1 + QuestionViewController1.score
+    }
+    
+    @IBAction func noSelected(_ sender: Any) {
+        QuestionViewController1.score = 2 + QuestionViewController1.score
+    }
+    
     /*
     // MARK: - Navigation
 

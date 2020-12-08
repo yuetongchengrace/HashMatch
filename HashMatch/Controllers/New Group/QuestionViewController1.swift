@@ -10,6 +10,8 @@ import UIKit
 
 class QuestionViewController1: UIViewController {
 
+    static var score: Int = 0
+    
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var questionnaireAns1: UIButton!
     @IBOutlet weak var questionnaireAns2: UIButton!
@@ -30,6 +32,24 @@ class QuestionViewController1: UIViewController {
         // self.present(secondViewController, animated: true, completion: nil)
         self.navigationController?.pushViewController(questionViewController2, animated: true)
     }
+    
+    
+    @IBAction func pythonSelected(_ sender: Any) {
+        QuestionViewController1.score = 1 + QuestionViewController1.score
+    }
+    
+    @IBAction func javaSelected(_ sender: Any) {
+        QuestionViewController1.score = 4 + QuestionViewController1.score
+    }
+    
+    @IBAction func matlabSelected(_ sender: Any) {
+        QuestionViewController1.score = 2 + QuestionViewController1.score
+    }
+    
+    @IBAction func swiftSelected(_ sender: Any) {
+        QuestionViewController1.score = 3 + QuestionViewController1.score
+    }
+    
     
 
     /*

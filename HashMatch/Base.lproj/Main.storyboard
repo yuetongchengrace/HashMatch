@@ -469,7 +469,7 @@ EExhc3QgTmFtZQ
                                     <constraint firstAttribute="height" constant="40" id="9Rw-If-yCk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="15"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="Questionaire">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1025,7 +1025,7 @@ EExhc3QgTmFtZQ
                                     <constraint firstAttribute="height" constant="40" id="eZF-Ei-be2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="15"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="Question 3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1052,6 +1052,7 @@ EExhc3QgTmFtZQ
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="partyingSelected:" destination="to0-fK-mCf" eventType="touchUpInside" id="7PS-ya-QwN"/>
                                             <action selector="pressedPartying:" destination="to0-fK-mCf" eventType="touchUpInside" id="bM7-He-mAz"/>
                                         </connections>
                                     </button>
@@ -1065,6 +1066,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="In the Lab/ working">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="workingSelected:" destination="to0-fK-mCf" eventType="touchUpInside" id="scq-eQ-R7f"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwS-IO-nm8">
                                         <rect key="frame" x="0.0" y="136.00000000000003" width="313" height="45"/>
@@ -1076,6 +1080,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="Gaming">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="gamingSelected:" destination="to0-fK-mCf" eventType="touchUpInside" id="xHh-vK-ht2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdS-Df-CtU">
                                         <rect key="frame" x="0.0" y="204.00000000000003" width="313" height="45"/>
@@ -1087,6 +1094,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="Eating icecream and watching Netflix">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="netflixSelected:" destination="to0-fK-mCf" eventType="touchUpInside" id="qKU-zr-qBa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1156,7 +1166,7 @@ EExhc3QgTmFtZQ
                                     <constraint firstAttribute="height" constant="40" id="Vzc-5g-oiD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="15"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="Question 4">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1183,7 +1193,7 @@ EExhc3QgTmFtZQ
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="s:" destination="6qW-zr-SOl" eventType="touchUpInside" id="f3x-m8-Mxu"/>
+                                            <action selector="yesSelected:" destination="6qW-zr-SOl" eventType="touchUpInside" id="28o-j8-BNB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McA-LW-ajz">
@@ -1196,6 +1206,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="noSelected:" destination="6qW-zr-SOl" eventType="touchUpInside" id="y5i-gl-Hhe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1234,7 +1247,7 @@ EExhc3QgTmFtZQ
                     <navigationItem key="navigationItem" id="oqD-Tw-4x7"/>
                     <connections>
                         <outlet property="nextBtn" destination="Wm8-7F-tfr" id="PIu-x0-Naz"/>
-                        <outlet property="questionnaireAns1" destination="6ho-HI-ZxD" id="TVv-7C-HJ2"/>
+                        <outlet property="questionnaireAns1" destination="6ho-HI-ZxD" id="8Oi-rI-ZyV"/>
                         <outlet property="questionnaireAns2" destination="McA-LW-ajz" id="nxf-jx-8wJ"/>
                     </connections>
                 </viewController>
@@ -1263,7 +1276,7 @@ EExhc3QgTmFtZQ
                                     <constraint firstAttribute="height" constant="40" id="bid-CJ-npl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="15"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="Finish">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1289,6 +1302,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="I played varsity sports">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="playSportsSelected:" destination="kBb-Ul-lG8" eventType="touchUpInside" id="vve-Ne-O3X"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvV-Co-YIx">
                                         <rect key="frame" x="0.0" y="68.000000000000028" width="313" height="45"/>
@@ -1300,6 +1316,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="Always #1 in my fantasy league">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="fantasySelected:" destination="kBb-Ul-lG8" eventType="touchUpInside" id="1jx-AU-cfs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="017-Jr-qt6">
                                         <rect key="frame" x="0.0" y="136.00000000000003" width="313" height="45"/>
@@ -1311,6 +1330,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="I'm more of a runner">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="runnerSelected:" destination="kBb-Ul-lG8" eventType="touchUpInside" id="jtO-FN-QT8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-8e-nio">
                                         <rect key="frame" x="0.0" y="204.00000000000003" width="313" height="45"/>
@@ -1322,6 +1344,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="I love when the QB hits a home run, right?">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="noSportsSelected:" destination="kBb-Ul-lG8" eventType="touchUpInside" id="zYV-ob-glE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1391,7 +1416,7 @@ EExhc3QgTmFtZQ
                                     <constraint firstAttribute="height" constant="40" id="wAa-LL-k7H"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="15"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="Question 2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1419,6 +1444,7 @@ EExhc3QgTmFtZQ
                                         </state>
                                         <connections>
                                             <action selector="d:" destination="Rdj-1T-1uD" eventType="touchUpInside" id="lM4-H1-7RL"/>
+                                            <action selector="pythonSelected:" destination="Rdj-1T-1uD" eventType="touchUpInside" id="4Aw-BF-F0a"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIJ-XL-J0u">
@@ -1431,6 +1457,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="Java - Most people like me">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="javaSelected:" destination="Rdj-1T-1uD" eventType="touchUpInside" id="Qzp-WI-hVz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNy-NF-nkc">
                                         <rect key="frame" x="0.0" y="136.00000000000003" width="313" height="45"/>
@@ -1442,6 +1471,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="Matlab - I'm not that picky">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="matlabSelected:" destination="Rdj-1T-1uD" eventType="touchUpInside" id="bKv-4K-7Ot"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cq-Oy-B3V">
                                         <rect key="frame" x="0.0" y="204.00000000000003" width="313" height="45"/>
@@ -1453,6 +1485,9 @@ EExhc3QgTmFtZQ
                                         <state key="normal" title="Swift - You'll spend hours fixing a small issue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="swiftSelected:" destination="Rdj-1T-1uD" eventType="touchUpInside" id="Boe-B9-nvN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
