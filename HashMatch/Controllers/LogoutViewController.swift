@@ -15,6 +15,16 @@ class LogoutViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    
+    @IBAction func retakeQuiz(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let questionViewController1 = storyboard.instantiateViewController(withIdentifier: "Q1")
+        // self.present(secondViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(questionViewController1, animated: true)
+        
+    }
+    
+    
     @IBAction func logoutClicked(_ sender: Any) {
         // UserDefaults.standard.set(false, forKey: "isUserSignedIn")
         UserDefaults.standard.removeObject(forKey: "isUserSignedIn")

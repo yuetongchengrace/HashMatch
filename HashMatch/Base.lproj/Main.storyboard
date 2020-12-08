@@ -968,6 +968,9 @@ EExhc3QgTmFtZQ
                                 <state key="normal" title="Retake Questionnaire">
                                     <color key="titleColor" red="0.1087935531" green="0.10987071700000001" blue="0.10987071700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="retakeQuiz:" destination="Qca-Bx-WkI" eventType="touchUpInside" id="f6j-DG-xpl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UC9-WF-Q1u">
                                 <rect key="frame" x="281" y="33" width="78" height="54"/>
