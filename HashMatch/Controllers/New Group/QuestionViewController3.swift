@@ -10,33 +10,42 @@ import UIKit
 
 class QuestionViewController3: UIViewController {
 
-    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var questionnaireAns1: UIButton!
     @IBOutlet weak var questionnaireAns2: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextBtn.applyPrimaryBtnDesign()
+        //nextBtn.applyPrimaryBtnDesign()
         questionnaireAns1.applyPrimaryBtnDesign()
         questionnaireAns2.applyPrimaryBtnDesign()
         // Do any additional setup after loading the view.
        
     }
     
+    /*
     @IBAction func clickNext(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                let questionViewController4 = storyboard.instantiateViewController(withIdentifier: "Q4")
                // self.present(secondViewController, animated: true, completion: nil)
                self.navigationController?.pushViewController(questionViewController4, animated: true)
     }
+    */
     
+    func nextQues() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let questionViewController4 = storyboard.instantiateViewController(withIdentifier: "Q4")
+        // self.present(secondViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(questionViewController4, animated: true)
+    }
     
     @IBAction func yesSelected(_ sender: Any) {
         QuestionViewController1.score = 1 + QuestionViewController1.score
+        nextQues()
     }
     
     @IBAction func noSelected(_ sender: Any) {
         QuestionViewController1.score = 2 + QuestionViewController1.score
+        nextQues()
     }
     
     /*

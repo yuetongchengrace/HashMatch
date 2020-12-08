@@ -1018,20 +1018,6 @@ EExhc3QgTmFtZQ
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0y-8J-CDD">
-                                <rect key="frame" x="224" y="711" width="120" height="40"/>
-                                <color key="backgroundColor" red="0.4549019608" green="0.64313725489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="eZF-Ei-be2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="15"/>
-                                <state key="normal" title="Question 3">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickNext:" destination="to0-fK-mCf" eventType="touchUpInside" id="chU-QD-Mzl"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abr-7b-gO4">
                                 <rect key="frame" x="64" y="90" width="244" height="38"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="25"/>
@@ -1116,15 +1102,12 @@ EExhc3QgTmFtZQ
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ew9-UG-DP8" firstAttribute="top" secondItem="jxB-Ez-17d" secondAttribute="top" constant="229" id="8zJ-wX-iyP"/>
-                            <constraint firstItem="G0y-8J-CDD" firstAttribute="leading" secondItem="5Mz-sI-5OD" secondAttribute="leading" constant="224" id="Dhg-CS-g9Z"/>
                             <constraint firstItem="abr-7b-gO4" firstAttribute="leading" secondItem="5Mz-sI-5OD" secondAttribute="leading" constant="64" id="Eii-cv-h7q"/>
-                            <constraint firstItem="5Mz-sI-5OD" firstAttribute="bottom" secondItem="G0y-8J-CDD" secondAttribute="bottom" constant="27" id="HVi-a0-6mR"/>
                             <constraint firstItem="ew9-UG-DP8" firstAttribute="centerX" secondItem="Mfv-n3-Mbt" secondAttribute="centerX" id="HWB-8S-6tB"/>
                             <constraint firstItem="Mfv-n3-Mbt" firstAttribute="leading" secondItem="5Mz-sI-5OD" secondAttribute="leading" constant="30" id="MOe-71-7Bz"/>
                             <constraint firstItem="3PX-gX-168" firstAttribute="leading" secondItem="5Mz-sI-5OD" secondAttribute="leading" constant="31" id="WAf-ea-GZw"/>
                             <constraint firstItem="3PX-gX-168" firstAttribute="top" secondItem="abr-7b-gO4" secondAttribute="bottom" constant="7" id="bDB-aq-B51"/>
                             <constraint firstItem="Mfv-n3-Mbt" firstAttribute="top" secondItem="3PX-gX-168" secondAttribute="bottom" constant="37" id="bx8-qs-T2D"/>
-                            <constraint firstItem="3PX-gX-168" firstAttribute="trailing" secondItem="G0y-8J-CDD" secondAttribute="trailing" id="hsZ-g2-jaC"/>
                             <constraint firstItem="3PX-gX-168" firstAttribute="centerX" secondItem="jxB-Ez-17d" secondAttribute="centerX" id="sRg-Rh-Iv6"/>
                             <constraint firstItem="abr-7b-gO4" firstAttribute="centerX" secondItem="ew9-UG-DP8" secondAttribute="centerX" id="xQp-f0-M8I"/>
                             <constraint firstItem="abr-7b-gO4" firstAttribute="top" secondItem="5Mz-sI-5OD" secondAttribute="top" constant="46" id="ynh-jE-iX6"/>
@@ -1133,7 +1116,6 @@ EExhc3QgTmFtZQ
                     </view>
                     <navigationItem key="navigationItem" id="HIA-c9-grh"/>
                     <connections>
-                        <outlet property="nextBtn" destination="G0y-8J-CDD" id="mYx-4S-tak"/>
                         <outlet property="questionnaireAns1" destination="Brx-48-G5p" id="uSX-f2-FcD"/>
                         <outlet property="questionnaireAns2" destination="P62-EB-x2e" id="XtA-TL-GR6"/>
                         <outlet property="questionnaireAns3" destination="gwS-IO-nm8" id="7UH-vJ-Obz"/>
@@ -1158,20 +1140,6 @@ EExhc3QgTmFtZQ
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm8-7F-tfr">
-                                <rect key="frame" x="224" y="711" width="120" height="40"/>
-                                <color key="backgroundColor" red="0.4549019608" green="0.64313725489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Vzc-5g-oiD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="15"/>
-                                <state key="normal" title="Question 4">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickNext:" destination="6qW-zr-SOl" eventType="touchUpInside" id="FVH-pN-zop"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJD-cr-crs">
                                 <rect key="frame" x="64" y="90" width="244" height="38"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="25"/>
@@ -1229,23 +1197,19 @@ EExhc3QgTmFtZQ
                         <constraints>
                             <constraint firstItem="rnX-14-WLZ" firstAttribute="top" secondItem="JJD-cr-crs" secondAttribute="bottom" constant="7" id="0Mx-rd-grB"/>
                             <constraint firstItem="bSu-i2-yZ3" firstAttribute="top" secondItem="rnX-14-WLZ" secondAttribute="bottom" constant="37" id="2lx-kA-vhJ"/>
-                            <constraint firstItem="rnX-14-WLZ" firstAttribute="trailing" secondItem="Wm8-7F-tfr" secondAttribute="trailing" id="6wr-S7-0Hm"/>
                             <constraint firstItem="nZY-an-sm5" firstAttribute="centerX" secondItem="bSu-i2-yZ3" secondAttribute="centerX" id="B6k-Vr-OWl"/>
                             <constraint firstItem="JJD-cr-crs" firstAttribute="top" secondItem="KdJ-kr-eeE" secondAttribute="top" constant="46" id="Da0-ys-Zkh"/>
-                            <constraint firstItem="KdJ-kr-eeE" firstAttribute="bottom" secondItem="Wm8-7F-tfr" secondAttribute="bottom" constant="27" id="Qef-yX-KD4"/>
                             <constraint firstItem="JJD-cr-crs" firstAttribute="leading" secondItem="KdJ-kr-eeE" secondAttribute="leading" constant="64" id="a9y-4Z-8Z7"/>
                             <constraint firstItem="bSu-i2-yZ3" firstAttribute="leading" secondItem="KdJ-kr-eeE" secondAttribute="leading" constant="30" id="bAk-jU-uuw"/>
                             <constraint firstItem="JJD-cr-crs" firstAttribute="centerX" secondItem="nZY-an-sm5" secondAttribute="centerX" id="c5M-3B-F9W"/>
                             <constraint firstItem="rnX-14-WLZ" firstAttribute="centerX" secondItem="Z9X-LZ-mr9" secondAttribute="centerX" id="j1l-a1-Vki"/>
                             <constraint firstItem="rnX-14-WLZ" firstAttribute="leading" secondItem="KdJ-kr-eeE" secondAttribute="leading" constant="31" id="pgV-Rv-gmL"/>
-                            <constraint firstItem="Wm8-7F-tfr" firstAttribute="leading" secondItem="KdJ-kr-eeE" secondAttribute="leading" constant="224" id="t0b-cG-Fbk"/>
                             <constraint firstItem="nZY-an-sm5" firstAttribute="top" secondItem="Z9X-LZ-mr9" secondAttribute="top" constant="229" id="uhN-9D-JMg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KdJ-kr-eeE"/>
                     </view>
                     <navigationItem key="navigationItem" id="oqD-Tw-4x7"/>
                     <connections>
-                        <outlet property="nextBtn" destination="Wm8-7F-tfr" id="PIu-x0-Naz"/>
                         <outlet property="questionnaireAns1" destination="6ho-HI-ZxD" id="8Oi-rI-ZyV"/>
                         <outlet property="questionnaireAns2" destination="McA-LW-ajz" id="nxf-jx-8wJ"/>
                     </connections>
@@ -1268,20 +1232,6 @@ EExhc3QgTmFtZQ
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmE-Xj-l4L">
-                                <rect key="frame" x="224" y="711" width="120" height="40"/>
-                                <color key="backgroundColor" red="0.4549019608" green="0.64313725489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="bid-CJ-npl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="15"/>
-                                <state key="normal" title="Finish">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickedFinish:" destination="kBb-Ul-lG8" eventType="touchUpInside" id="yRF-aI-bYe"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x3-TA-bht">
                                 <rect key="frame" x="64" y="90" width="244" height="38"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="25"/>
@@ -1367,15 +1317,12 @@ EExhc3QgTmFtZQ
                         <constraints>
                             <constraint firstItem="j5Z-RH-I8M" firstAttribute="centerX" secondItem="sdD-Gk-aCb" secondAttribute="centerX" id="3yT-UI-x1M"/>
                             <constraint firstItem="3x3-TA-bht" firstAttribute="top" secondItem="jqX-1b-Qxy" secondAttribute="top" constant="46" id="G6o-JM-44A"/>
-                            <constraint firstItem="jqX-1b-Qxy" firstAttribute="bottom" secondItem="vmE-Xj-l4L" secondAttribute="bottom" constant="27" id="MyB-ZF-4Zm"/>
                             <constraint firstItem="Ac8-nE-hct" firstAttribute="leading" secondItem="jqX-1b-Qxy" secondAttribute="leading" constant="31" id="Q7r-pt-636"/>
                             <constraint firstItem="3x3-TA-bht" firstAttribute="leading" secondItem="jqX-1b-Qxy" secondAttribute="leading" constant="64" id="UEk-5L-Opy"/>
                             <constraint firstItem="sdD-Gk-aCb" firstAttribute="leading" secondItem="jqX-1b-Qxy" secondAttribute="leading" constant="30" id="XWE-Lo-djQ"/>
                             <constraint firstItem="Ac8-nE-hct" firstAttribute="centerX" secondItem="drD-B0-k7i" secondAttribute="centerX" id="XhT-jl-rc0"/>
                             <constraint firstItem="sdD-Gk-aCb" firstAttribute="top" secondItem="Ac8-nE-hct" secondAttribute="bottom" constant="37" id="aYK-Xp-MO3"/>
-                            <constraint firstItem="Ac8-nE-hct" firstAttribute="trailing" secondItem="vmE-Xj-l4L" secondAttribute="trailing" id="bFX-1L-cRG"/>
                             <constraint firstItem="3x3-TA-bht" firstAttribute="centerX" secondItem="j5Z-RH-I8M" secondAttribute="centerX" id="iIi-FO-MUN"/>
-                            <constraint firstItem="vmE-Xj-l4L" firstAttribute="leading" secondItem="jqX-1b-Qxy" secondAttribute="leading" constant="224" id="lM2-X9-WpJ"/>
                             <constraint firstItem="Ac8-nE-hct" firstAttribute="top" secondItem="3x3-TA-bht" secondAttribute="bottom" constant="7" id="oHY-Tx-ff7"/>
                             <constraint firstItem="j5Z-RH-I8M" firstAttribute="top" secondItem="drD-B0-k7i" secondAttribute="top" constant="229" id="w3Q-vL-yim"/>
                         </constraints>
@@ -1383,7 +1330,6 @@ EExhc3QgTmFtZQ
                     </view>
                     <navigationItem key="navigationItem" id="fKP-LT-RWR"/>
                     <connections>
-                        <outlet property="nextBtn" destination="vmE-Xj-l4L" id="LTY-4e-z3f"/>
                         <outlet property="questionnaireAns1" destination="bNk-ta-feV" id="Ldi-vS-zws"/>
                         <outlet property="questionnaireAns2" destination="EvV-Co-YIx" id="eTx-mn-e8G"/>
                         <outlet property="questionnaireAns3" destination="017-Jr-qt6" id="TvY-5w-oH0"/>
@@ -1408,20 +1354,6 @@ EExhc3QgTmFtZQ
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1g-8r-u4P">
-                                <rect key="frame" x="224" y="711" width="120" height="40"/>
-                                <color key="backgroundColor" red="0.4549019608" green="0.64313725489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="wAa-LL-k7H"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="15"/>
-                                <state key="normal" title="Question 2">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickNext:" destination="Rdj-1T-1uD" eventType="touchUpInside" id="FN5-To-yfb"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OR3-fX-Td9">
                                 <rect key="frame" x="64" y="90" width="244" height="38"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="25"/>
@@ -1506,15 +1438,12 @@ EExhc3QgTmFtZQ
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="SZn-DB-BZd" firstAttribute="top" secondItem="2GA-1g-18E" secondAttribute="bottom" constant="37" id="10l-P5-5WH"/>
-                            <constraint firstItem="g1g-8r-u4P" firstAttribute="leading" secondItem="Tiv-K7-2hy" secondAttribute="leading" constant="224" id="3Nl-UY-dpu"/>
                             <constraint firstItem="jdA-hY-UCF" firstAttribute="top" secondItem="RpZ-ml-dda" secondAttribute="top" constant="229" id="Cyp-X7-qSe"/>
                             <constraint firstItem="OR3-fX-Td9" firstAttribute="centerX" secondItem="jdA-hY-UCF" secondAttribute="centerX" id="Fat-q3-xjh"/>
                             <constraint firstItem="jdA-hY-UCF" firstAttribute="centerX" secondItem="SZn-DB-BZd" secondAttribute="centerX" id="GYu-Wt-4FK"/>
                             <constraint firstItem="2GA-1g-18E" firstAttribute="top" secondItem="OR3-fX-Td9" secondAttribute="bottom" constant="7" id="MW5-xR-Yxm"/>
                             <constraint firstItem="OR3-fX-Td9" firstAttribute="leading" secondItem="Tiv-K7-2hy" secondAttribute="leading" constant="64" id="S9W-ve-GdC"/>
-                            <constraint firstItem="Tiv-K7-2hy" firstAttribute="bottom" secondItem="g1g-8r-u4P" secondAttribute="bottom" constant="27" id="Vbb-MF-pVz"/>
                             <constraint firstItem="2GA-1g-18E" firstAttribute="leading" secondItem="Tiv-K7-2hy" secondAttribute="leading" constant="31" id="a7Y-0G-vdS"/>
-                            <constraint firstItem="2GA-1g-18E" firstAttribute="trailing" secondItem="g1g-8r-u4P" secondAttribute="trailing" id="eev-t3-cyV"/>
                             <constraint firstItem="SZn-DB-BZd" firstAttribute="leading" secondItem="Tiv-K7-2hy" secondAttribute="leading" constant="30" id="gfM-AY-N6v"/>
                             <constraint firstItem="2GA-1g-18E" firstAttribute="centerX" secondItem="RpZ-ml-dda" secondAttribute="centerX" id="k74-1u-FwR"/>
                             <constraint firstItem="OR3-fX-Td9" firstAttribute="top" secondItem="Tiv-K7-2hy" secondAttribute="top" constant="46" id="rNX-FN-0w5"/>
@@ -1523,7 +1452,6 @@ EExhc3QgTmFtZQ
                     </view>
                     <navigationItem key="navigationItem" id="m4x-vP-8HY"/>
                     <connections>
-                        <outlet property="nextBtn" destination="g1g-8r-u4P" id="9Is-cD-jdx"/>
                         <outlet property="questionnaireAns1" destination="D9x-og-duB" id="dMW-9p-P2N"/>
                         <outlet property="questionnaireAns2" destination="VIJ-XL-J0u" id="G1A-1E-yyf"/>
                         <outlet property="questionnaireAns3" destination="QNy-NF-nkc" id="IL6-vS-7F6"/>

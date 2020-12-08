@@ -12,21 +12,29 @@ class QuestionViewController1: UIViewController {
 
     static var score: Int = 0
     
-    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var questionnaireAns1: UIButton!
     @IBOutlet weak var questionnaireAns2: UIButton!
     @IBOutlet weak var questionnaireAns3: UIButton!
     @IBOutlet weak var questionnaireAns4: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextBtn.applyPrimaryBtnDesign()
+        //nextBtn.applyPrimaryBtnDesign()
         questionnaireAns1.applyPrimaryBtnDesign()
         questionnaireAns2.applyPrimaryBtnDesign()
         questionnaireAns3.applyPrimaryBtnDesign()
         questionnaireAns4.applyPrimaryBtnDesign()
         // Do any additional setup after loading the view.
     }
+    /*
     @IBAction func clickNext(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let questionViewController2 = storyboard.instantiateViewController(withIdentifier: "Q2")
+        // self.present(secondViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(questionViewController2, animated: true)
+    }
+ */
+    
+    func nextQues() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController2 = storyboard.instantiateViewController(withIdentifier: "Q2")
         // self.present(secondViewController, animated: true, completion: nil)
@@ -36,18 +44,22 @@ class QuestionViewController1: UIViewController {
     
     @IBAction func pythonSelected(_ sender: Any) {
         QuestionViewController1.score = 1 + QuestionViewController1.score
+        nextQues()
     }
     
     @IBAction func javaSelected(_ sender: Any) {
         QuestionViewController1.score = 4 + QuestionViewController1.score
+        nextQues()
     }
     
     @IBAction func matlabSelected(_ sender: Any) {
         QuestionViewController1.score = 2 + QuestionViewController1.score
+        nextQues()
     }
     
     @IBAction func swiftSelected(_ sender: Any) {
         QuestionViewController1.score = 3 + QuestionViewController1.score
+        nextQues()
     }
     
     
