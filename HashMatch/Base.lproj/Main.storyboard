@@ -1053,7 +1053,6 @@ EExhc3QgTmFtZQ
                                         </state>
                                         <connections>
                                             <action selector="partyingSelected:" destination="to0-fK-mCf" eventType="touchUpInside" id="7PS-ya-QwN"/>
-                                            <action selector="pressedPartying:" destination="to0-fK-mCf" eventType="touchUpInside" id="bM7-He-mAz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P62-EB-x2e">
@@ -1280,7 +1279,7 @@ EExhc3QgTmFtZQ
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickNext:" destination="kBb-Ul-lG8" eventType="touchUpInside" id="QfT-Nx-hwP"/>
+                                    <action selector="clickedFinish:" destination="kBb-Ul-lG8" eventType="touchUpInside" id="yRF-aI-bYe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x3-TA-bht">
@@ -1443,7 +1442,6 @@ EExhc3QgTmFtZQ
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="d:" destination="Rdj-1T-1uD" eventType="touchUpInside" id="lM4-H1-7RL"/>
                                             <action selector="pythonSelected:" destination="Rdj-1T-1uD" eventType="touchUpInside" id="4Aw-BF-F0a"/>
                                         </connections>
                                     </button>

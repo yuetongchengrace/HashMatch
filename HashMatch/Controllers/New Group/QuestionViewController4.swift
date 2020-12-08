@@ -26,19 +26,19 @@ class QuestionViewController4: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func clickFinish(_ sender: Any) {
-        
+    
+    @IBAction func clickedFinish(_ sender: Any) {
         let defaults = UserDefaults.standard
         var savedScore:Int = 0
         savedScore = QuestionViewController1.score
+        print(savedScore)
         defaults.set(savedScore, forKey: "score")
-        
+                
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "Mainpage")
         // self.present(secondViewController, animated: true, completion: nil)
         self.navigationController?.pushViewController(mainViewController, animated: true)
     }
-    
     
     @IBAction func playSportsSelected(_ sender: Any) {
         QuestionViewController1.score = 4 + QuestionViewController1.score
