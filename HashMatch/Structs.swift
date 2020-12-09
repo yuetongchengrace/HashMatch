@@ -9,10 +9,12 @@
 import Foundation
 
 struct Person {
+    let email: String
     let firstName: String
     let lastName: String
     let uid: String
     let photo: String
+    let description: String
     let age: String
     let city: String
     let state: String

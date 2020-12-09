@@ -24,6 +24,9 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         fetchData()
         setUpCollectionView()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     var people: [Person] = []
     var images: [Int:UIImage] = [:]
@@ -43,11 +46,13 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                 // all key value pairs
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
+                    let email = document.documentID
                     let data = document.data()
                     let firstName = data["firstName"] as? String ?? ""
                     let lastName = data["lastName"] as? String ?? ""
                     let uid = data["uid"] as? String ?? ""
                     let photo = data["photo"] as? String ?? ""
+                    let description = data["description"] as? String ?? ""
                     let age = data["age"] as? String ?? ""
                     let city = data["city"] as? String ?? ""
                     let state = data["state"] as? String ?? ""
@@ -58,7 +63,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     let matches = data["matches"] as? [String] ?? [""]
                 
                     if uid != self.userId{
-                        let newPerson = Person(firstName: firstName, lastName: lastName, uid: uid, photo: photo, age: age, city: city, state: state,education: education, fieldOfEngineering: fieldOfEngineering, occupation: occupation, likes: likes, matches: matches)
+                        let newPerson = Person(email: email, firstName: firstName, lastName: lastName, uid: uid, photo: photo, description: description, age: age, city: city, state: state,education: education, fieldOfEngineering: fieldOfEngineering, occupation: occupation, likes: likes, matches: matches)
                         //print(uid)
                         //print(photo)
                         self.people.append(newPerson)
