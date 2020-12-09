@@ -999,9 +999,8 @@ EExhc3QgTmFtZQ
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b6p-K8-HCG">
-                                <rect key="frame" x="0.0" y="156" width="375" height="573"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b6p-K8-HCG">
+                                <rect key="frame" x="0.0" y="163" width="375" height="566"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PplMatchedTableViewCell" id="e1I-Qv-A6B">
@@ -1034,21 +1033,19 @@ EExhc3QgTmFtZQ
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaH-KZ-gAI">
-                                <rect key="frame" x="16" y="104" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaH-KZ-gAI">
+                                <rect key="frame" x="16" y="105" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="People You've Matched" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io0-TU-EB7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="People You've Matched" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io0-TU-EB7">
                                 <rect key="frame" x="93" y="70" width="188" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-PM-jgX">
-                                <rect key="frame" x="344" y="110" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-PM-jgX">
+                                <rect key="frame" x="344" y="111" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="VnS-Ka-bTX"/>
                                 </constraints>
@@ -1057,6 +1054,20 @@ EExhc3QgTmFtZQ
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="b6p-K8-HCG" firstAttribute="leading" secondItem="pl0-Td-2w4" secondAttribute="leading" id="443-gm-XqX"/>
+                            <constraint firstItem="Io0-TU-EB7" firstAttribute="centerX" secondItem="BQ4-hD-kPL" secondAttribute="centerX" id="6vV-OK-22S"/>
+                            <constraint firstItem="DXJ-PM-jgX" firstAttribute="top" secondItem="pl0-Td-2w4" secondAttribute="top" constant="67" id="Es8-yF-oVj"/>
+                            <constraint firstItem="DXJ-PM-jgX" firstAttribute="leading" secondItem="WaH-KZ-gAI" secondAttribute="trailing" constant="14" id="HAG-H2-Xkm"/>
+                            <constraint firstItem="pl0-Td-2w4" firstAttribute="trailing" secondItem="DXJ-PM-jgX" secondAttribute="trailing" constant="9" id="J0L-oO-gHa"/>
+                            <constraint firstItem="Io0-TU-EB7" firstAttribute="centerX" secondItem="b6p-K8-HCG" secondAttribute="centerX" id="Pcp-tD-BEm"/>
+                            <constraint firstItem="WaH-KZ-gAI" firstAttribute="centerY" secondItem="DXJ-PM-jgX" secondAttribute="centerY" id="UjL-qG-2Nn"/>
+                            <constraint firstItem="b6p-K8-HCG" firstAttribute="bottom" secondItem="pl0-Td-2w4" secondAttribute="bottom" id="egA-sx-j2l"/>
+                            <constraint firstItem="Io0-TU-EB7" firstAttribute="leading" secondItem="pl0-Td-2w4" secondAttribute="leading" constant="93" id="iPr-KN-StN"/>
+                            <constraint firstItem="b6p-K8-HCG" firstAttribute="top" secondItem="WaH-KZ-gAI" secondAttribute="bottom" constant="24" id="jKl-6o-nzg"/>
+                            <constraint firstItem="Io0-TU-EB7" firstAttribute="top" secondItem="pl0-Td-2w4" secondAttribute="top" constant="26" id="lPn-xs-Ene"/>
+                            <constraint firstItem="WaH-KZ-gAI" firstAttribute="leading" secondItem="BQ4-hD-kPL" secondAttribute="leadingMargin" id="qXO-Y3-BR5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pl0-Td-2w4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Matches" image="heart.fill" catalog="system" id="k2Q-U7-k4E"/>
