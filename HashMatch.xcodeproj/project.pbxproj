@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */; };
 		2419F045256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */; };
+		2482EAF525804EC4005687CB /* PplMatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482EAF425804EC4005687CB /* PplMatchedViewController.swift */; };
 		62B1585F2579F6B900594CF5 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B1585E2579F6B900594CF5 /* DatabaseManager.swift */; };
 		62B15862257A0BF300594CF5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B15861257A0BF300594CF5 /* StorageManager.swift */; };
 		C1018A07DD8125E2E51C76D2 /* Pods_HashMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE326B5391A3E89674D02DC /* Pods_HashMatch.framework */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescribeYourselfVC.swift; sourceTree = "<group>"; };
+		2482EAF425804EC4005687CB /* PplMatchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PplMatchedViewController.swift; sourceTree = "<group>"; };
 		332BB559115EFBB37861AF50 /* Pods-HashMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HashMatch.debug.xcconfig"; path = "Target Support Files/Pods-HashMatch/Pods-HashMatch.debug.xcconfig"; sourceTree = "<group>"; };
 		62B1585E2579F6B900594CF5 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		62B15861257A0BF300594CF5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */,
 				DB88DFBE256C7C8800D2A4F6 /* CollectionViewController.swift */,
 				DB40BA34257C81A300A0D6BE /* DetailedViewController.swift */,
+				2482EAF425804EC4005687CB /* PplMatchedViewController.swift */,
 				2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */,
 				DB46A19B25691D5400903890 /* SignupViewController.swift */,
 				DB46A18B25691C6B00903890 /* ViewController.swift */,
@@ -284,6 +287,7 @@
 				DB40BA35257C81A300A0D6BE /* DetailedViewController.swift in Sources */,
 				DB46A18C25691C6B00903890 /* ViewController.swift in Sources */,
 				62B1585F2579F6B900594CF5 /* DatabaseManager.swift in Sources */,
+				2482EAF525804EC4005687CB /* PplMatchedViewController.swift in Sources */,
 				62B15862257A0BF300594CF5 /* StorageManager.swift in Sources */,
 				DBF063DE257D9F380069D7B9 /* QuestionViewController3.swift in Sources */,
 				2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */,

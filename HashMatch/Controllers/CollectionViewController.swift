@@ -115,9 +115,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
     }
     
-    
-    
-
     /*
     // MARK: - Navigation
 
