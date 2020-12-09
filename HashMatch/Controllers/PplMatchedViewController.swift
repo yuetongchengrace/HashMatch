@@ -42,7 +42,7 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "PplMatchedTableViewCell")
         let profileUIView = UIView(frame: cell.bounds)
         
-        let cgrect1 = CGRect.init(x: 15, y: 10, width: 50, height: 50)
+        let cgrect1 = CGRect.init(x: 15, y: 15, width: 50, height: 50)
         let profilePicture = UIImageView.init(frame: cgrect1)
         profilePicture.image = theImageCache[indexPath.row]
         profilePicture.layer.cornerRadius = profilePicture.frame.height/2
