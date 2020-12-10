@@ -37,7 +37,7 @@ extension DatabaseManager {
     
     // Inserts new user to database
     public func insertPerson(with person: Person) {
-        database.collection("users").document(person.email).setData(["firstName": person.firstName, "lastName": person.lastName, "uid": person.uid, "age": person.age, "city": person.city, "state": person.state, "education": person.education, "fieldOfEngineering": person.fieldOfEngineering, "occupation": person.occupation, "quizScore": person.quizScore, "likes": person.likes, "matches": person.matches])
+        database.collection("users").document(person.email).setData(["firstName": person.firstName, "lastName": person.lastName, "uid": person.uid, "age": person.age, "city": person.city, "state": person.state, "education": person.education, "fieldOfEngineering": person.fieldOfEngineering, "occupation": person.occupation, "quizScore": person.quizScore, "gender": person.gender, "preference": person.preference, "likes": person.likes, "matches": person.matches])
     }
     //insert photo
     public func insertPhoto(with email: String, url: String, description: String) {
@@ -49,31 +49,6 @@ extension DatabaseManager {
             let email = person.email
             self.database.collection("users").document(email).setData(["quizScore": quizScore], merge: true)
         })
-    }
-    
-    public func getPersonFromEmail(with email: String) -> Person {
-        var person = Person()
-        let docRef = database.collection("users").document(email)
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                person = Person(email: document.documentID,
-                                firstName: document.get("firstName") as? String ?? "",
-                                lastName: document.get("lastName") as? String ?? "",
-                                uid: document.get("uid") as? String ?? "",
-                                photo: document.get("photo") as? String ?? "",
-                                description: document.get("description") as? String ?? "",
-                                age: document.get("occupation") as! String,
-                                city: document.get("city") as! String,
-                                state: document.get("state") as! String,
-                                education: document.get("education") as! String,
-                                fieldOfEngineering: document.get("fieldOfEngineering") as! String,
-                                occupation: document.get("occupation") as! String,
-                                quizScore: document.get("quizScore") as! Int,
-                                likes: document.get("likes") as! [String],
-                                matches: document.get("matches") as! [String])
-            }
-        }
-        return person
     }
     
     public func getPersonFromUID(with uid: String, completion: @escaping ((Person) -> Void)) {
@@ -98,6 +73,8 @@ extension DatabaseManager {
                     fieldOfEngineering: document.get("fieldOfEngineering") as! String,
                     occupation: document.get("occupation") as! String,
                     quizScore: document.get("quizScore") as! Int,
+                    gender: document.get("gender") as! String,
+                    preference: document.get("preference") as! String,
                     likes: document.get("likes") as! [String],
                     matches: document.get("matches") as! [String])
                     completion(person)

@@ -71,15 +71,16 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
             
             let fName = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lName = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let myAge =
-                age.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let myAge = age.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let myCity = city.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let myState = state.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let edu = education.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let field = fieldOfEngineering.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let occu = occupation.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let gen = gender.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let pref = sexuality.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            DatabaseManager.shared.insertPerson(with: Person(email: email, firstName: fName, lastName: lName, uid: UserDefaults.standard.string(forKey: "user")!, photo: "", description: "", age: myAge, city: myCity, state: myState, education: edu, fieldOfEngineering: field, occupation: occu, quizScore: 0, likes: [String](), matches: [String]()))
+            DatabaseManager.shared.insertPerson(with: Person(email: email, firstName: fName, lastName: lName, uid: UserDefaults.standard.string(forKey: "user")!, photo: "", description: "", age: myAge, city: myCity, state: myState, education: edu, fieldOfEngineering: field, occupation: occu, quizScore: 0, gender: gen, preference: pref, likes: [String](), matches: [String]()))
         
         }
         // Push the next page after everything is success (segue is working now?)

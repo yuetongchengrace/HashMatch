@@ -7,38 +7,87 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class DetailedViewController: UIViewController {
-    var person: Person?
+    var person = Person()
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var name_ageLabel: UILabel!
+    @IBOutlet weak var gender_occuLabel: UILabel!
+    @IBOutlet weak var locLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var eduLabel: UILabel!
+    @IBOutlet weak var fieldLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
-        guard let p = person else { return }
+        guard let p = person as Person? else { return }
         
-        
+        let width = view.frame.size.width
+        let size = width/1.2
+        imageView.frame = CGRect(x: (view.frame.size.width-size)/2, y: 150, width: size, height: size)
+        imageView.layer.cornerRadius = imageView.frame.size.width/2
+        imageView.tintColor = .gray
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
      
         //add Image
         let url = URL(string: p.photo)
         if let img = try? Data(contentsOf: url!){
             imageView.image = UIImage(data:img)
         }
-        //add corresponding information to the fields
         
-        // Do any additional setup after loading the view.
+        name_ageLabel.text = "\(person.firstName) \(person.lastName), \(person.age)"
+        gender_occuLabel.text = "\(person.gender), \(person.occupation)"
+        locLabel.text = "\(person.city), \(person.state)"
+        eduLabel.text = "\(person.education)"
+        fieldLabel.text = "\(person.fieldOfEngineering)"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func likePressed(_ sender: Any) {
+        let db = Firestore.firestore()
+        let id = UserDefaults.standard.string(forKey: "user")
+        let docRef = db.collection("users").whereField("uid", isEqualTo: id!)
+        docRef.getDocuments { (querySnapshot, error) in
+            for document in querySnapshot!.documents {
+                let email = document.reference.documentID
+                let theirLikes = self.person.likes
+                let userRef = db.collection("users").document(email)
+                let themRef = db.collection("users").document(self.person.email)
+                
+                //its a match
+                if theirLikes.contains(email) {
+                    //add them to your matches
+                    userRef.updateData([
+                        "matches": FieldValue.arrayUnion([self.person.email])
+                    ])
+                    //add yourself to their matches
+                    themRef.updateData([
+                        "matches": FieldValue.arrayUnion([email])
+                    ])
+                    //remove yourself from their likes
+                    themRef.updateData([
+                        "likes": FieldValue.arrayRemove([email])
+                    ])
+                    
+                    print("It's a Match!")
+                    //do something
+                    
+                } else {
+                    //not a match
+                    userRef.updateData([
+                        "likes": FieldValue.arrayUnion([self.person.email])
+                    ])
+                }
+            }
+        }
     }
-    */
-
+    
 }

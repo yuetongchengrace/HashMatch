@@ -22,6 +22,8 @@ struct Person {
     let fieldOfEngineering: String
     let occupation: String
     let quizScore: Int
+    let gender: String
+    let preference: String
     var likes: [String]
     var matches: [String]
     
@@ -29,6 +31,6 @@ struct Person {
 
 extension Person {
     init() {
-        self.init(email: "", firstName: "", lastName: "", uid: "", photo: "", description: "", age: "", city: "", state: "", education: "", fieldOfEngineering: "", occupation: "", quizScore: 0, likes: [""], matches: [""])
+        self.init(email: "", firstName: "", lastName: "", uid: "", photo: "", description: "", age: "", city: "", state: "", education: "", fieldOfEngineering: "", occupation: "", quizScore: 0, gender: "", preference: "", likes: [""], matches: [""])
     }
 }

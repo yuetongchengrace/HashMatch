@@ -716,8 +716,8 @@ EExhc3QgTmFtZQ
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sexuality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIW-iT-OlI">
-                                <rect key="frame" x="29" y="357" width="69" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIW-iT-OlI">
+                                <rect key="frame" x="29" y="357" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -795,7 +795,7 @@ EExhc3QgTmFtZQ
                                 <state key="normal" title="Dislike" image="xmark.circle" catalog="system"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5o-Tq-EJG">
-                                <rect key="frame" x="204" y="743" width="42" height="21"/>
+                                <rect key="frame" x="204" y="743" width="104" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -830,7 +830,7 @@ EExhc3QgTmFtZQ
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-ad-OR4">
-                                <rect key="frame" x="25" y="743" width="42" height="21"/>
+                                <rect key="frame" x="25" y="743" width="111" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -862,6 +862,9 @@ EExhc3QgTmFtZQ
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.69701784850000004" green="0.77719968559999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Like" image="heart.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="likePressed:" destination="wQ9-ad-gca" eventType="touchUpInside" id="ege-2a-EfI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Field" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eS3-dU-PfA">
                                 <rect key="frame" x="204" y="717" width="40" height="26"/>
@@ -882,7 +885,13 @@ EExhc3QgTmFtZQ
                         <viewLayoutGuide key="safeArea" id="1Gk-q2-yW4"/>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="d7L-BF-La7" id="h4z-VY-dQB"/>
+                        <outlet property="eduLabel" destination="3XT-ad-OR4" id="5m0-oz-1L9"/>
+                        <outlet property="fieldLabel" destination="F5o-Tq-EJG" id="KQe-hD-L2J"/>
+                        <outlet property="gender_occuLabel" destination="YVh-b1-zof" id="fLa-UY-Lso"/>
                         <outlet property="imageView" destination="TaX-69-lDa" id="ow2-4c-3a4"/>
+                        <outlet property="locLabel" destination="NTa-df-C4s" id="nB3-bI-7c3"/>
+                        <outlet property="name_ageLabel" destination="QPi-hR-h6U" id="1AN-Ct-UvG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7g-nZ-J2o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

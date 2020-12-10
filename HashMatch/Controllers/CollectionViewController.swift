@@ -61,11 +61,13 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     let fieldOfEngineering = data["fieldOfEngineering"] as? String ?? ""
                     let occupation = data["occupation"] as? String ?? ""
                     let quizScore = data["quizScore"] as? Int ?? 0
+                    let gender = data["gender"] as? String ?? ""
+                    let preference = data["preference"] as? String ?? ""
                     let likes = data["likes"] as? [String] ?? [""]
                     let matches = data["matches"] as? [String] ?? [""]
                 
                     if uid != self.userId{
-                        let newPerson = Person(email: email, firstName: firstName, lastName: lastName, uid: uid, photo: photo, description: description, age: age, city: city, state: state,education: education, fieldOfEngineering: fieldOfEngineering, occupation: occupation, quizScore: quizScore, likes: likes, matches: matches)
+                        let newPerson = Person(email: email, firstName: firstName, lastName: lastName, uid: uid, photo: photo, description: description, age: age, city: city, state: state,education: education, fieldOfEngineering: fieldOfEngineering, occupation: occupation, quizScore: quizScore, gender: gender, preference: preference, likes: likes, matches: matches)
                         //print(uid)
                         //print(photo)
                         self.people.append(newPerson)
