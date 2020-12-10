@@ -221,7 +221,7 @@ EExhc3QgTmFtZQ
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sexuality" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nD-Xq-mxU">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Show Me" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nD-Xq-mxU">
                                 <rect key="frame" x="31" y="322" width="313" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="kvb-TQ-0Jf"/>
@@ -364,9 +364,11 @@ EExhc3QgTmFtZQ
                         <outlet property="education" destination="M9y-yX-PbI" id="e5V-vC-oJ3"/>
                         <outlet property="fieldOfEngineering" destination="X12-rX-1SV" id="64C-tR-FaN"/>
                         <outlet property="firstName" destination="gCI-0b-WZg" id="1Th-1W-M0M"/>
+                        <outlet property="gender" destination="ybZ-jP-LIr" id="f24-JU-0dZ"/>
                         <outlet property="lastName" destination="8yb-Ul-6iQ" id="KfD-y6-2uT"/>
                         <outlet property="nextBtn" destination="H3r-O4-Ac4" id="NGc-nh-bNT"/>
                         <outlet property="occupation" destination="iNA-dG-Wka" id="Kce-dv-hgx"/>
+                        <outlet property="sexuality" destination="9nD-Xq-mxU" id="QNv-c3-zqd"/>
                         <outlet property="state" destination="6PY-Uh-dxt" id="arg-q7-tCM"/>
                     </connections>
                 </viewController>

@@ -10,11 +10,13 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var age: UITextField!
+    @IBOutlet weak var gender: UITextField!
+    @IBOutlet weak var sexuality: UITextField!
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var state: UITextField!
     @IBOutlet weak var education: UITextField!
@@ -22,6 +24,16 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var occupation: UITextField!
     
     var email: String = ""
+    
+    var selectedGender = ""
+    var genderOptions = ["Male", "Female", "Other"]
+    var selectedSexuality = ""
+    var sexualityOptions = ["Men", "Women", "Everyone"]
+    var selectedState = ""
+    var stateOptions = [ "AK", "AL", "AR", "AS", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA",     "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"]
+    let pickerView1 = UIPickerView()
+    let pickerView2 = UIPickerView()
+    let pickerView3 = UIPickerView()
     
     //For gender and sexuality, maybe we should provide options for them to pick from?
     //I didn't add outlet for those two yet
@@ -33,6 +45,8 @@ class OnboardingViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         // Do any additional setup after loading the view.
         nextBtn.applyPrimaryBtnDesign()
+        createPickerView()
+        dismissPickerView()
     }
     //Make sure none of the input fields is empty
     func checkInput () -> String?{
@@ -85,6 +99,67 @@ class OnboardingViewController: UIViewController {
             print("1111: " + vc!.email)
         }
     }
+    
+    //pickerView stuff
+    //I CAN STILL TYPE THINGS INTO THE TEXTFIELD...MAYBE OKAY? IF INPUTVIEW IS SET I DONT THINK KEYBOARD APPEARS FOR USERS ON MOBILE?? which is what actually matters
+    func createPickerView() {
+        pickerView1.delegate = self
+        gender.inputView = pickerView1
+        pickerView2.delegate = self
+        sexuality.inputView = pickerView2
+        pickerView3.delegate = self
+        state.inputView = pickerView3
+    }
+    func dismissPickerView() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.action))
+        toolBar.setItems([button], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        gender.inputAccessoryView = toolBar
+        sexuality.inputAccessoryView = toolBar
+        state.inputAccessoryView = toolBar
+    }
+    @objc func action() {
+        view.endEditing(true)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == pickerView3 {
+            return stateOptions.count
+        }
+        return genderOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == pickerView1 {
+            return genderOptions[row]
+        }
+        if pickerView == pickerView2 {
+            return sexualityOptions[row]
+        }
+        return stateOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == pickerView1 {
+            selectedGender = genderOptions[row] // selected item
+            gender.text = selectedGender
+        }
+        else if pickerView == pickerView2 {
+            selectedSexuality = sexualityOptions[row] // selected item
+            sexuality.text = selectedSexuality
+        }
+        else {
+            selectedState = stateOptions[row] // selected item
+            state.text = selectedState
+        }
+    }
+    
 }
 extension UIButton{
     func applyPrimaryBtnDesign(){
