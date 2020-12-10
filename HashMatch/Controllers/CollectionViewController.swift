@@ -111,7 +111,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOffset = CGSize(width: 1, height: 1)
-        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowRadius = 3.0
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
         
