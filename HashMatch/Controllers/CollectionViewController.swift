@@ -46,7 +46,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             } else {
                 // all key value pairs
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+                    //print("\(document.documentID) => \(document.data())")
                     let email = document.documentID
                     let data = document.data()
                     let firstName = data["firstName"] as? String ?? ""
@@ -60,11 +60,12 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     let education = data["education"] as? String ?? ""
                     let fieldOfEngineering = data["fieldOfEngineering"] as? String ?? ""
                     let occupation = data["occupation"] as? String ?? ""
+                    let quizScore = data["quizScore"] as? Int ?? 0
                     let likes = data["likes"] as? [String] ?? [""]
                     let matches = data["matches"] as? [String] ?? [""]
                 
                     if uid != self.userId{
-                        let newPerson = Person(email: email, firstName: firstName, lastName: lastName, uid: uid, photo: photo, description: description, age: age, city: city, state: state,education: education, fieldOfEngineering: fieldOfEngineering, occupation: occupation, likes: likes, matches: matches)
+                        let newPerson = Person(email: email, firstName: firstName, lastName: lastName, uid: uid, photo: photo, description: description, age: age, city: city, state: state,education: education, fieldOfEngineering: fieldOfEngineering, occupation: occupation, quizScore: quizScore, likes: likes, matches: matches)
                         //print(uid)
                         //print(photo)
                         self.people.append(newPerson)

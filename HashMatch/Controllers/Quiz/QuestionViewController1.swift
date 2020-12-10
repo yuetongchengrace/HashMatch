@@ -16,8 +16,10 @@ class QuestionViewController1: UIViewController {
     @IBOutlet weak var questionnaireAns2: UIButton!
     @IBOutlet weak var questionnaireAns3: UIButton!
     @IBOutlet weak var questionnaireAns4: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        QuestionViewController1.score = 0
         //nextBtn.applyPrimaryBtnDesign()
         questionnaireAns1.applyPrimaryBtnDesign()
         questionnaireAns2.applyPrimaryBtnDesign()

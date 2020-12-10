@@ -17,20 +17,9 @@ class DetailedViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
         guard let p = person else { return }
-        //Put these into corresponding fields~
-        print(p.email)
-        print(p.photo)
-        print(p.description)
-        print(p.lastName)
-        print(p.firstName)
-        print(p.uid)
-        print(p.age)
-        print(p.city)
-        print(p.state)
-        print(p.education)
-        print(p.fieldOfEngineering)
-        print(p.occupation)
         
+        
+     
         //add Image
         let url = URL(string: p.photo)
         if let img = try? Data(contentsOf: url!){

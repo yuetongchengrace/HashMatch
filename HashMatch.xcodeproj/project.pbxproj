@@ -76,7 +76,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0FF22C33257D4C610023F9AF /* New Group */ = {
+		0FF22C33257D4C610023F9AF /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
 				DBF063D9257D9BDB0069D7B9 /* QuestionViewController1.swift */,
@@ -84,13 +84,13 @@
 				DBF063DD257D9F380069D7B9 /* QuestionViewController3.swift */,
 				DBF063DF257D9F430069D7B9 /* QuestionViewController4.swift */,
 			);
-			path = "New Group";
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		62B1585D2579F26800594CF5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0FF22C33257D4C610023F9AF /* New Group */,
+				0FF22C33257D4C610023F9AF /* Quiz */,
 				DB33B313257A28CA004763F0 /* LoginViewController.swift */,
 				2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */,
 				DB88DFBE256C7C8800D2A4F6 /* CollectionViewController.swift */,

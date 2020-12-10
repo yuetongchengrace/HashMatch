@@ -37,11 +37,18 @@ extension DatabaseManager {
     
     // Inserts new user to database
     public func insertPerson(with person: Person) {
-        database.collection("users").document(person.email).setData(["firstName": person.firstName, "lastName": person.lastName, "uid": person.uid, "age": person.age, "city": person.city, "state": person.state, "education": person.education, "fieldOfEngineering": person.fieldOfEngineering, "occupation": person.occupation, "likes": person.likes, "matches": person.matches])
+        database.collection("users").document(person.email).setData(["firstName": person.firstName, "lastName": person.lastName, "uid": person.uid, "age": person.age, "city": person.city, "state": person.state, "education": person.education, "fieldOfEngineering": person.fieldOfEngineering, "occupation": person.occupation, "quizScore": person.quizScore, "likes": person.likes, "matches": person.matches])
     }
     //insert photo
     public func insertPhoto(with email: String, url: String, description: String) {
         database.collection("users").document(email).setData(["photo": url, "description": description], merge: true)
+    }
+    
+    public func insertQuizScore(with uid: String, quizScore: Int) {
+        DatabaseManager.shared.getPersonFromUID(with: uid, completion: { person in
+            let email = person.email
+            self.database.collection("users").document(email).setData(["quizScore": quizScore], merge: true)
+        })
     }
     
     public func getPersonFromEmail(with email: String) -> Person {
@@ -61,6 +68,7 @@ extension DatabaseManager {
                                 education: document.get("education") as! String,
                                 fieldOfEngineering: document.get("fieldOfEngineering") as! String,
                                 occupation: document.get("occupation") as! String,
+                                quizScore: document.get("quizScore") as! Int,
                                 likes: document.get("likes") as! [String],
                                 matches: document.get("matches") as! [String])
             }
@@ -89,6 +97,7 @@ extension DatabaseManager {
                     education: document.get("education") as! String,
                     fieldOfEngineering: document.get("fieldOfEngineering") as! String,
                     occupation: document.get("occupation") as! String,
+                    quizScore: document.get("quizScore") as! Int,
                     likes: document.get("likes") as! [String],
                     matches: document.get("matches") as! [String])
                     completion(person)

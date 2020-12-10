@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class QuestionViewController4: UIViewController {
 
@@ -45,8 +47,19 @@ class QuestionViewController4: UIViewController {
         let defaults = UserDefaults.standard
         var savedScore:Int = 0
         savedScore = QuestionViewController1.score
-        print(savedScore)
         defaults.set(savedScore, forKey: "score")
+        
+       // let database = Firestore.firestore()
+        
+        
+        if let id = UserDefaults.standard.string(forKey: "user"){
+            DatabaseManager.shared.insertQuizScore(with: id, quizScore: QuestionViewController1.score)
+        }
+        else {
+            print("Error saving quizScore to database")
+        }
+ 
+        
                 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "Mainpage")
