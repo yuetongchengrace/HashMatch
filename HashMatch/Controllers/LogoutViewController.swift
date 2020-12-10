@@ -11,8 +11,57 @@ import UIKit
 //We can pull user information from the users collection and display on corresponding fields
 class LogoutViewController: UIViewController {
 
+    
+    @IBOutlet weak var profilePicView: UIImageView!
+    @IBOutlet weak var name_age: UILabel!
+    @IBOutlet weak var sexualityLabel: UILabel!
+    @IBOutlet weak var locLabel: UILabel!
+    @IBOutlet weak var eduLabel: UILabel!
+    @IBOutlet weak var fieldLabel: UILabel!
+    @IBOutlet weak var occuLabel: UILabel!
+    
+    var userId = ""
+    var currentPerson = Person()
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let id = UserDefaults.standard.string(forKey: "user"){
+            userId = id
+        }
+        let width = view.frame.size.width
+        let size = width/3
+        profilePicView.frame = CGRect(x: (view.frame.size.width-size)/2, y: 120, width: size, height: size)
+        profilePicView.layer.cornerRadius = profilePicView.frame.size.width/2
+        profilePicView.image = UIImage(systemName: "person")
+        profilePicView.tintColor = .gray
+        profilePicView.contentMode = .scaleAspectFit
+        profilePicView.layer.masksToBounds = true
+        profilePicView.layer.borderWidth = 2
+        profilePicView.layer.borderColor = UIColor.lightGray.cgColor
+        updatePage()
+    
+    }
+    
+    func updatePage() {
+        DatabaseManager.shared.getPersonFromUID(with: userId, completion: { person in
+            print(person.photo)
+            if let fullURL =  URL(string: person.photo){
+               do{
+                   let data = try Data(contentsOf: fullURL)
+                   let img = UIImage(data:data)
+                   // print(index)
+                self.profilePicView.image = img!
+               }
+               catch {
+                   print("There was an error")
+               }
+            }
+            self.name_age.text = "\(person.firstName) \(person.lastName), \(person.age)"
+            self.locLabel.text = "\(person.city), \(person.state)"
+            self.eduLabel.text = "\(person.education)"
+            self.fieldLabel.text = "\(person.fieldOfEngineering)"
+            self.occuLabel.text = "\(person.occupation)"
+                
+        })
     }
 
     
@@ -48,5 +97,5 @@ class LogoutViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

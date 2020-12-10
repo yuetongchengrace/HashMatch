@@ -68,7 +68,7 @@ extension DatabaseManager {
         return person
     }
     
-    public func getPersonFromUID(with uid: String) -> Person {
+    public func getPersonFromUID(with uid: String, completion: @escaping ((Person) -> Void)) {
         var person = Person()
         let docRef = database.collection("users").whereField("uid", isEqualTo: uid)
         docRef.getDocuments { (querySnapshot, error) in
@@ -76,13 +76,14 @@ extension DatabaseManager {
                 print("Error getting documents: \(error)")
             } else {
                 for document in querySnapshot!.documents {
+                    person.firstName = document.get("firstName") as? String ?? ""
                     person = Person(email: document.documentID,
                     firstName: document.get("firstName") as? String ?? "",
                     lastName: document.get("lastName") as? String ?? "",
                     uid: document.get("uid") as? String ?? "",
                     photo: document.get("photo") as? String ?? "",
                     description: document.get("description") as? String ?? "",
-                    age: document.get("occupation") as! String,
+                    age: document.get("age") as! String,
                     city: document.get("city") as! String,
                     state: document.get("state") as! String,
                     education: document.get("education") as! String,
@@ -90,10 +91,10 @@ extension DatabaseManager {
                     occupation: document.get("occupation") as! String,
                     likes: document.get("likes") as! [String],
                     matches: document.get("matches") as! [String])
+                    completion(person)
                 }
             }
         }
-        return person
     }
     
 }
