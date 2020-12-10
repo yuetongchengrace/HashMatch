@@ -65,25 +65,8 @@ class OnboardingViewController: UIViewController {
             let field = fieldOfEngineering.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let occu = occupation.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            DatabaseManager.shared.insertUser(with: User(firstName: fName, lastName: lName, emailAddress: email, uid: UserDefaults.standard.string(forKey: "user")!, age: myAge, city: myCity,state: myState, education: edu, fieldOfEngineering: field, occupation: occu, likes: [String](), matches: [String]()))
+            DatabaseManager.shared.insertPerson(with: Person(email: email, firstName: fName, lastName: lName, uid: UserDefaults.standard.string(forKey: "user")!, photo: myAge, description: myCity,age: myState, city: edu, state: field, education: occu, fieldOfEngineering: "", occupation: "", likes: [String](), matches: [String]()))
         
-        // *Add to the database / add to local storage first and then put everything into the database
-        /*
-            let db = Firestore.firestore()
-            let fName = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lName = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            db.collection("users").addDocument(data: [
-                "firstName": fName,
-                "lastName": lName,
-                "uid": UserDefaults.standard.string(forKey: "user")!
-                // Continue adding other informations into the database! currently only have first and last name
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
-                }
-            }
-            */
         }
         // Push the next page after everything is success (segue is working now?)
     }

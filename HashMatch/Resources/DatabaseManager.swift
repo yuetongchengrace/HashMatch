@@ -36,30 +36,64 @@ extension DatabaseManager {
     }
     
     // Inserts new user to database
-    public func insertUser(with user: User) {
-        database.collection("users").document(user.emailAddress).setData(["firstName": user.firstName, "lastName": user.lastName, "uid": user.uid, "age": user.age, "city":user.city, "state": user.state, "education": user.education, "fieldOfEngineering": user.fieldOfEngineering, "occupation": user.occupation, "likes": user.likes, "matches": user.matches])
+    public func insertPerson(with person: Person) {
+        database.collection("users").document(person.email).setData(["firstName": person.firstName, "lastName": person.lastName, "uid": person.uid, "age": person.age, "city": person.city, "state": person.state, "education": person.education, "fieldOfEngineering": person.fieldOfEngineering, "occupation": person.occupation, "likes": person.likes, "matches": person.matches])
     }
     //insert photo
     public func insertPhoto(with email: String, url: String, description: String) {
         database.collection("users").document(email).setData(["photo": url, "description": description], merge: true)
     }
-}
-
-struct User {
-    var firstName: String
-    var lastName: String
-    let emailAddress: String
-    let uid: String
-    let age: String
-    let city: String
-    let state: String
-    let education: String
-    let fieldOfEngineering: String
-    let occupation: String
-    var likes: [String]
-    var matches: [String]
     
-    var profilePictureFileName: String {
-        return "\(emailAddress).png"
+    public func getPersonFromEmail(with email: String) -> Person {
+        var person = Person()
+        let docRef = database.collection("users").document(email)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                person = Person(email: document.documentID,
+                                firstName: document.get("firstName") as? String ?? "",
+                                lastName: document.get("lastName") as? String ?? "",
+                                uid: document.get("uid") as? String ?? "",
+                                photo: document.get("photo") as? String ?? "",
+                                description: document.get("description") as? String ?? "",
+                                age: document.get("occupation") as! String,
+                                city: document.get("city") as! String,
+                                state: document.get("state") as! String,
+                                education: document.get("education") as! String,
+                                fieldOfEngineering: document.get("fieldOfEngineering") as! String,
+                                occupation: document.get("occupation") as! String,
+                                likes: document.get("likes") as! [String],
+                                matches: document.get("matches") as! [String])
+            }
+        }
+        return person
     }
+    
+    public func getPersonFromUID(with uid: String) -> Person {
+        var person = Person()
+        let docRef = database.collection("users").whereField("uid", isEqualTo: uid)
+        docRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    person = Person(email: document.documentID,
+                    firstName: document.get("firstName") as? String ?? "",
+                    lastName: document.get("lastName") as? String ?? "",
+                    uid: document.get("uid") as? String ?? "",
+                    photo: document.get("photo") as? String ?? "",
+                    description: document.get("description") as? String ?? "",
+                    age: document.get("occupation") as! String,
+                    city: document.get("city") as! String,
+                    state: document.get("state") as! String,
+                    education: document.get("education") as! String,
+                    fieldOfEngineering: document.get("fieldOfEngineering") as! String,
+                    occupation: document.get("occupation") as! String,
+                    likes: document.get("likes") as! [String],
+                    matches: document.get("matches") as! [String])
+                }
+            }
+        }
+        return person
+    }
+    
 }

@@ -25,3 +25,9 @@ struct Person {
     var matches: [String]
     
 }
+
+extension Person {
+    init() {
+        self.init(email: "", firstName: "", lastName: "", uid: "", photo: "", description: "", age: "", city: "", state: "", education: "", fieldOfEngineering: "", occupation: "", likes: [""], matches: [""])
+    }
+}
