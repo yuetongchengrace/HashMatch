@@ -85,7 +85,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                    let img = UIImage(data:data)
                    // print(index)
                    images[index] = img!
-                   
                }
                catch {
                    print("There was an error")

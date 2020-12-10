@@ -42,23 +42,24 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "PplMatchedTableViewCell")
         let profileUIView = UIView(frame: cell.bounds)
         
-        let cgrect1 = CGRect.init(x: 15, y: 15, width: 50, height: 50)
+        let cgrect1 = CGRect.init(x: 15, y: 9, width: 50, height: 50)
         let profilePicture = UIImageView.init(frame: cgrect1)
         profilePicture.image = theImageCache[indexPath.row]
         profilePicture.layer.cornerRadius = profilePicture.frame.height/2
+        profilePicture.layer.backgroundColor = UIColor.black.cgColor
         profilePicture.clipsToBounds = true
         
         let cgrect2 = CGRect.init(x: 80, y: 13, width: 270, height: 20)
         let fullName = UILabel.init(frame: cgrect2)
         fullName.text = theData[indexPath.row].name
         //fullName.text = Person.firstName
-        fullName.font = UIFont(name: "Kohinoor-Gujarati-Regular", size: 16.0)
-        fullName.font = UIFont.boldSystemFont(ofSize: 16.0)
+        fullName.font = UIFont(name: "Gill Sans", size: 18)
+        fullName.font = UIFont.boldSystemFont(ofSize: fullName.font.pointSize)
         
         let cgrect3 = CGRect.init(x: 80, y: 105, width: 270, height: 20)
         let personDetails = UILabel.init(frame: cgrect3)
         personDetails.text = theData[indexPath.row].name
-        personDetails.font = UIFont(name: "Kohinoor-Gujarati-Regular", size: 9.0)
+        personDetails.font = UIFont(name: "Gill Sans", size: 14)
         
         profileUIView.addSubview(profilePicture)
         profileUIView.addSubview(fullName)
