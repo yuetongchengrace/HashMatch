@@ -14,11 +14,13 @@ class LogoutViewController: UIViewController {
     
     @IBOutlet weak var profilePicView: UIImageView!
     @IBOutlet weak var name_age: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var sexualityLabel: UILabel!
     @IBOutlet weak var locLabel: UILabel!
     @IBOutlet weak var eduLabel: UILabel!
     @IBOutlet weak var fieldLabel: UILabel!
     @IBOutlet weak var occuLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     var userId = ""
     var currentPerson = Person()
@@ -56,10 +58,13 @@ class LogoutViewController: UIViewController {
                }
             }
             self.name_age.text = "\(person.firstName) \(person.lastName), \(person.age)"
+            self.genderLabel.text = "\(person.gender)"
+            self.sexualityLabel.text = "\(person.preference)"
             self.locLabel.text = "\(person.city), \(person.state)"
             self.eduLabel.text = "\(person.education)"
             self.fieldLabel.text = "\(person.fieldOfEngineering)"
             self.occuLabel.text = "\(person.occupation)"
+            self.descriptionLabel.text = "\(person.description)"
                 
         })
     }
