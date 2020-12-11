@@ -14,13 +14,20 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
 
     @IBOutlet weak var pplMatchedTableView: UITableView!
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        people = []
+//        images = []
+//        fetchDataForTableView()
+//        setupTableView()
+//    }
+    override func viewWillAppear(_ animated: Bool) {
+        people = []
+        images = []
         fetchDataForTableView()
         setupTableView()
     }
-    
     var userId = ""
     var matches : [String] = []
     var people: [Person] = []
