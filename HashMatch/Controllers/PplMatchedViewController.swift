@@ -50,7 +50,7 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
         
         let cgrect2 = CGRect.init(x: 80, y: 13, width: 270, height: 20)
         let fullName = UILabel.init(frame: cgrect2)
-        fullName.text = people[indexPath.row].firstName
+        fullName.text = "\(people[indexPath.row].firstName ) \(people[indexPath.row].lastName ), \(people[indexPath.row].age)"
         //fullName.text = Person.firstName
         fullName.font = UIFont(name: "Gill Sans", size: 18)
         fullName.font = UIFont.boldSystemFont(ofSize: fullName.font.pointSize)
@@ -58,7 +58,7 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
         let cgrect3 = CGRect.init(x: 80, y: 45, width: 270, height: 20)
         let personDetails = UILabel.init(frame: cgrect3)
         // theData[indexPath.row].name
-        personDetails.text = people[indexPath.row].occupation
+        personDetails.text = "\(people[indexPath.row].email )"
         personDetails.font = UIFont(name: "Gill Sans", size: 14)
         
         profileUIView.addSubview(profilePicture)
@@ -77,10 +77,6 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     func fetchDataForTableView(){
-//        let url = URL(string: "https://research.engineering.wustl.edu/~todd/studio.json")
-//        let data = try! Data(contentsOf: url!)
-//        theData=try! JSONDecoder().decode([Info].self, from:data)
-        // print("the data is \(theData)")
         if let id = UserDefaults.standard.string(forKey: "user"){
            userId = id
         }
