@@ -14,6 +14,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     var score = 0
     var gender = ""
     var preference = ""
+    var likes: [String] = []
+    var matches: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -25,7 +27,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         layout.minimumLineSpacing = 12
         collectionView!.collectionViewLayout = layout
         //fetch ones own score
-        fetchScore()
+        fetchMyData()
         // fetchData()
         setUpCollectionView()
     }
@@ -42,11 +44,13 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.register(PersonCell.self , forCellWithReuseIdentifier: "cell")
     }
     //get all user data from firestore and saving into the people array
-    func fetchScore(){
+    func fetchMyData(){
         DatabaseManager.shared.getPersonFromUID(with: userId, completion: { person in
             self.score = person.quizScore
             self.gender = person.gender
             self.preference = person.preference
+            self.likes = person.likes
+            self.matches = person.matches
             self.fetchData()
        })
     }
@@ -54,6 +58,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         print("my score is:", self.score)
         print("my gender is:", self.gender)
         print("my preference is:", self.preference)
+        print("I have liked: ", self.likes)
+        print("I have matched: ", self.matches)
         let db = Firestore.firestore()
         db.collection("users").getDocuments() { (querySnapshot, err) in
             if let err = err {

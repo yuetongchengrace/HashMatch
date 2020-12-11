@@ -58,12 +58,25 @@ class DetailedViewController: UIViewController {
         docRef.getDocuments { (querySnapshot, error) in
             for document in querySnapshot!.documents {
                 let email = document.reference.documentID
+                let myLikes = document.data()["likes"] as? [String] ?? []
+                let myMatches = document.data()["matches"] as? [String] ?? []
+                print(myLikes)
+                print(myMatches)
+                let theirMatches = self.person.matches
                 let theirLikes = self.person.likes
                 let userRef = db.collection("users").document(email)
                 let themRef = db.collection("users").document(self.person.email)
                 
+                //you are already matched
+                if theirMatches.contains(email){
+                    self.alert(title: "Wait", message: "You are already matched")
+                }
+                //You have liked them and they haven't liked u back
+                else if myLikes.contains(self.person.email){
+                     self.alert(title: "Wait", message: "You have already liked them")
+                }
                 //its a match
-                if theirLikes.contains(email) {
+                else if theirLikes.contains(email) {
                     //add them to your matches
                     userRef.updateData([
                         "matches": FieldValue.arrayUnion([self.person.email])
@@ -78,16 +91,22 @@ class DetailedViewController: UIViewController {
                     ])
                     
                     print("It's a Match!")
+                    self.alert(title: "Congrats", message: "Wow it was a match!")
                     //do something
                     
                 } else {
-                    //not a match
+                    //not a match -> they haven't liked you
                     userRef.updateData([
                         "likes": FieldValue.arrayUnion([self.person.email])
                     ])
+                    self.alert(title: "Liked", message: "You have successfully liked them")
                 }
             }
         }
     }
-    
+    func alert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
 }
