@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class PplMatchedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -15,50 +17,48 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        pplMatchedTableView.delegate = self
-        pplMatchedTableView.dataSource = self
-        setupTableView()
         fetchDataForTableView()
-        cacheImages()
+        setupTableView()
     }
     
+    var userId = ""
+    var matches : [String] = []
     var people: [Person] = []
-    var images: [Int:UIImage] = [:]
+    var images: [UIImage] = []
     
     struct Info: Codable{
         var name: String
         var description: String
         var image_url: String
     }
-    var theData: [Info] = []
-    var theImageCache: [UIImage] = []
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return theData.count
+    func tableView(_ pplMatchedTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(people.count)
+        return people.count
     }
         
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ pplMatchedTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "PplMatchedTableViewCell")
         let profileUIView = UIView(frame: cell.bounds)
         
         let cgrect1 = CGRect.init(x: 15, y: 9, width: 50, height: 50)
         let profilePicture = UIImageView.init(frame: cgrect1)
-        profilePicture.image = theImageCache[indexPath.row]
+        profilePicture.image = images[indexPath.row]
         profilePicture.layer.cornerRadius = profilePicture.frame.height/2
         profilePicture.layer.backgroundColor = UIColor.black.cgColor
         profilePicture.clipsToBounds = true
         
         let cgrect2 = CGRect.init(x: 80, y: 13, width: 270, height: 20)
         let fullName = UILabel.init(frame: cgrect2)
-        fullName.text = theData[indexPath.row].name
+        fullName.text = people[indexPath.row].firstName
         //fullName.text = Person.firstName
         fullName.font = UIFont(name: "Gill Sans", size: 18)
         fullName.font = UIFont.boldSystemFont(ofSize: fullName.font.pointSize)
         
-        let cgrect3 = CGRect.init(x: 80, y: 105, width: 270, height: 20)
+        let cgrect3 = CGRect.init(x: 80, y: 45, width: 270, height: 20)
         let personDetails = UILabel.init(frame: cgrect3)
-        personDetails.text = theData[indexPath.row].name
+        // theData[indexPath.row].name
+        personDetails.text = people[indexPath.row].occupation
         personDetails.font = UIFont(name: "Gill Sans", size: 14)
         
         profileUIView.addSubview(profilePicture)
@@ -72,24 +72,89 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
     
     func setupTableView(){
         pplMatchedTableView.dataSource = self
+        pplMatchedTableView.delegate = self
         pplMatchedTableView.register(UITableViewCell.self, forCellReuseIdentifier: "PplMatchedTableViewCell")
     }
 
     func fetchDataForTableView(){
-        let url = URL(string: "https://research.engineering.wustl.edu/~todd/studio.json")
-        let data = try! Data(contentsOf: url!)
-        theData=try! JSONDecoder().decode([Info].self, from:data)
-    }
-    
-    func cacheImages(){
-        //URL
-        //Data
-        //UIImage
-        for item in theData{
-            let url = URL(string: item.image_url)
-            let data = try? Data(contentsOf: url!)
-            let image = UIImage(data: data!)
-            theImageCache.append(image!)
+//        let url = URL(string: "https://research.engineering.wustl.edu/~todd/studio.json")
+//        let data = try! Data(contentsOf: url!)
+//        theData=try! JSONDecoder().decode([Info].self, from:data)
+        // print("the data is \(theData)")
+        if let id = UserDefaults.standard.string(forKey: "user"){
+           userId = id
         }
+        DatabaseManager.shared.getPersonFromUID(with: userId, completion: { person in
+            // print("here", person.matches)
+            for match in person.matches{
+               let db = Firestore.firestore()
+               let docRef = db.collection("users").document(match)
+               docRef.getDocument { (document, error) in
+                   if let document = document, document.exists {
+                    if let data = document.data(){
+                        // print(data)
+                        let email = document.documentID
+                        let firstName = data["firstName"] as? String ?? ""
+                        let lastName = data["lastName"] as? String ?? ""
+                        let uid = data["uid"] as? String ?? ""
+                        let photo = data["photo"] as? String ?? ""
+                        let description = data["description"] as? String ?? ""
+                        let age = data["age"] as? String ?? ""
+                        let city = data["city"] as? String ?? ""
+                        let state = data["state"] as? String ?? ""
+                        let education = data["education"] as? String ?? ""
+                        let fieldOfEngineering = data["fieldOfEngineering"] as? String ?? ""
+                        let occupation = data["occupation"] as? String ?? ""
+                        let quizScore = data["quizScore"] as? Int ?? 0
+                        let gender = data["gender"] as? String ?? ""
+                        let preference = data["preference"] as? String ?? ""
+                        let likes = data["likes"] as? [String] ?? [""]
+                        let matches = data["matches"] as? [String] ?? [""]
+                        let newPerson = Person(email: email, firstName: firstName, lastName: lastName, uid: uid, photo: photo, description: description, age: age, city: city, state: state,education: education, fieldOfEngineering: fieldOfEngineering, occupation: occupation, quizScore: quizScore, gender: gender, preference: preference, likes: likes, matches: matches)
+                        //print(uid)
+                        //print(photo)
+                        self.people.append(newPerson)
+                        // print(newPerson)
+                        // print(self.people)
+                        self.pplMatchedTableView.reloadData()
+                        self.cacheImages(person: newPerson)
+                    }
+                   } else {
+                       print("Document does not exist")
+                   }
+               }
+           }
+       })
+    
+    }
+
+    func cacheImages(person: Person){
+        print("how many people?", people.count)
+        if let fullURL =  URL(string: person.photo){
+            // print(fullURL!)
+            do{
+                let data = try Data(contentsOf: fullURL)
+                let img = UIImage(data:data)
+                // print(index)
+                images.append(img!)
+            }
+            catch {
+                print("There was an error")
+            }
+        }
+//        for (index, person) in people.enumerated() {
+//           if let fullURL =  URL(string: person.photo){
+//              // print(fullURL!)
+//              do{
+//                  let data = try Data(contentsOf: fullURL)
+//                  let img = UIImage(data:data)
+//                  // print(index)
+//                  images[index] = img!
+//              }
+//              catch {
+//                  print("There was an error")
+//              }
+//           }
+//       }
     }
 }
