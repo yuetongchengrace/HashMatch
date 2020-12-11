@@ -44,10 +44,10 @@ class QuestionViewController4: UIViewController {
     */
     
     func finQues() {
-        let defaults = UserDefaults.standard
-        var savedScore:Int = 0
-        savedScore = QuestionViewController1.score
-        defaults.set(savedScore, forKey: "score")
+//        let defaults = UserDefaults.standard
+//        var savedScore:Int = 0
+//        savedScore = QuestionViewController1.score
+//        defaults.set(savedScore, forKey: "score")
         
        // let database = Firestore.firestore()
         
