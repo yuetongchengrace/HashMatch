@@ -29,8 +29,8 @@ class DetailedViewController: UIViewController {
         guard let p = person as Person? else { return }
         
         let width = view.frame.size.width
-        let size = width/1.2
-        imageView.frame = CGRect(x: (view.frame.size.width-size)/2, y: 150, width: size, height: size)
+        let size = width/1.8
+        imageView.frame = CGRect(x: (view.frame.size.width-size)/2, y: 120, width: size, height: size)
         imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.tintColor = .gray
         imageView.contentMode = .scaleAspectFit
@@ -49,6 +49,7 @@ class DetailedViewController: UIViewController {
         locLabel.text = "\(person.city), \(person.state)"
         eduLabel.text = "\(person.education)"
         fieldLabel.text = "\(person.fieldOfEngineering)"
+        descriptionLabel.text = "\(person.description)"
     }
     
     @IBAction func likePressed(_ sender: Any) {

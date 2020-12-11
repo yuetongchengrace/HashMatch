@@ -101,7 +101,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     }
                 }
                 self.orderPeople()
-                self.cacheImages()
+                // self.cacheImages()
                 self.collectionView.reloadData()
             }
         }
