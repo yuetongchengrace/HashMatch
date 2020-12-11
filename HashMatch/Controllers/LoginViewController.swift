@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gradient = createGradient()
+        self.view.layer.insertSublayer(gradient, at: 0)
 
         // Do any additional setup after loading the view.
     }

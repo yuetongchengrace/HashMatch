@@ -41,6 +41,8 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var nextBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gradient = createGradient()
+        self.view.layer.insertSublayer(gradient, at: 0)
         //hide navigation bar so that the user cannot click back to the signup page
         navigationController?.setNavigationBarHidden(true, animated: false)
         // Do any additional setup after loading the view.

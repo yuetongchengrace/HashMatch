@@ -16,8 +16,10 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     var preference = ""
     var likes: [String] = []
     var matches: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.setNavigationBarHidden(true, animated: false)
         if let id = UserDefaults.standard.string(forKey: "user"){
             userId = id

@@ -21,6 +21,8 @@ class OnboardingDescribeYourselfVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gradient = createGradient()
+        self.view.layer.insertSublayer(gradient, at: 0)
         describeYourselfTextView.textViewDesign()
         nextbtn.applyPrimaryBtnDesign()
         

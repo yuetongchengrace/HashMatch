@@ -17,9 +17,12 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gradient = createGradient()
+        self.view.layer.insertSublayer(gradient, at: 0)
 
         // Do any additional setup after loading the view.
     }
+    
     func checkInput () -> String?{
         if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || retypePassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             return "Please fill in all fields"
