@@ -15,11 +15,17 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var retypePassword: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let gradient = createGradient()
         self.view.layer.insertSublayer(gradient, at: 0)
-
+        password.isSecureTextEntry = true
+        retypePassword.isSecureTextEntry = true
+        continueButton.applyPrimaryBtnDesign()
+      
         // Do any additional setup after loading the view.
     }
     
@@ -38,6 +44,7 @@ class SignupViewController: UIViewController {
     @IBAction func signupTapped(_ sender: Any) {
         let err = checkInput();
         if err != nil{
+            errorLabel.textColor = .white
             errorLabel.text = err!
             errorLabel.alpha = 1
         }
