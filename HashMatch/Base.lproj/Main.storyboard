@@ -527,6 +527,10 @@ EExhc3QgTmFtZQ
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="xzl-3H-bBC">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -556,6 +560,7 @@ EExhc3QgTmFtZQ
                         <outlet property="describeYourselfTextView" destination="omh-8u-NdK" id="LqX-oI-8sw"/>
                         <outlet property="imageView" destination="xFv-IM-gPV" id="zDM-7F-O0H"/>
                         <outlet property="nextbtn" destination="6kJ-BN-cnN" id="eyJ-YQ-F7q"/>
+                        <outlet property="spinner" destination="xzl-3H-bBC" id="YvB-nx-Qtm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NO4-c9-wkk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

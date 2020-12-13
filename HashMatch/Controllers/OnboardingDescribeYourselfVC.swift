@@ -12,7 +12,7 @@ class OnboardingDescribeYourselfVC: UIViewController {
 
     @IBOutlet weak var nextbtn: UIButton!
     @IBOutlet weak var describeYourselfTextView: UITextView!
-    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var imageView: UIImageView!
   
     var email: String = ""
@@ -21,6 +21,7 @@ class OnboardingDescribeYourselfVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner.isHidden = true
         let gradient = createGradient()
         self.view.layer.insertSublayer(gradient, at: 0)
         describeYourselfTextView.textViewDesign()
@@ -49,7 +50,7 @@ class OnboardingDescribeYourselfVC: UIViewController {
     
     @IBAction func nextPressed(_ sender: Any) {
         uploadPicture()
-        
+        spinner.isHidden = false
     }
     
     func checkInput () -> String?{

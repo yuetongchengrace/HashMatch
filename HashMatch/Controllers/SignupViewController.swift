@@ -65,6 +65,7 @@ class SignupViewController: UIViewController {
                 //check for errors
                 if error != nil{
                     //there was some error
+                    self.errorLabel.textColor = .white
                     self.errorLabel.text = "error while creating user"
                     
                     //TODO: Specify what type of error we encountered:
