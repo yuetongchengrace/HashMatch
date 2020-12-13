@@ -421,18 +421,6 @@ EExhc3QgTmFtZQ
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ufU-Ry-hnR">
-                                <rect key="frame" x="16" y="89" width="315" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8k-UV-Hm4">
-                                <rect key="frame" x="339" y="95" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.1087935531" green="0.10987071700000001" blue="0.10987071700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Search" image="magnifyingglass" catalog="system"/>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kUi-dS-daa">
                                 <rect key="frame" x="16" y="138" width="343" height="647"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -454,6 +442,11 @@ EExhc3QgTmFtZQ
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9x-d6-Pwt">
+                                <rect key="frame" x="0.0" y="80" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ZXe-kB-5xZ"/>
@@ -461,6 +454,7 @@ EExhc3QgTmFtZQ
                     <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="QJg-vg-mXK"/>
                     <connections>
                         <outlet property="collectionView" destination="kUi-dS-daa" id="vw5-0o-fu6"/>
+                        <outlet property="searchBar" destination="d9x-d6-Pwt" id="FFi-Od-5zq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="682-AK-akR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

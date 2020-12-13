@@ -7,7 +7,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
     var userId = ""
@@ -16,12 +16,15 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     var preference = ""
     var likes: [String] = []
     var matches: [String] = []
+    var search = ""
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var activityIndicator = ActivityIndicator(view: UIView(), navigationController: nil, tabBarController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.delegate = self
         navigationController?.setNavigationBarHidden(true, animated: false)
         if let id = UserDefaults.standard.string(forKey: "user"){
             userId = id
@@ -42,6 +45,11 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         navigationController?.setNavigationBarHidden(true, animated: false)
         fetchMyData()
     }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+          print("here i tapped searchBar")
+        search = searchBar.text!
+        fetchMyData()
+      }
     
     var people: [Person] = []
     var images: [Int:UIImage] = [:]
@@ -103,7 +111,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     if self.preference == "Everyone" || self.preference == "Women" && gender == "Female" || self.preference == "Men" && gender == "Male"{
 //                        print(self.preference)
 //                        print(gender)
-                        if uid != self.userId && !self.likes.contains(email) && !self.matches.contains(email){
+                        if uid != self.userId && !self.likes.contains(email) && !self.matches.contains(email) && firstName.contains(self.search) || lastName.contains(self.search) || self.search == "" {
                            let newPerson = Person(email: email, firstName: firstName, lastName: lastName, uid: uid, photo: photo, description: description, age: age, city: city, state: state,education: education, fieldOfEngineering: fieldOfEngineering, occupation: occupation, quizScore: quizScore, gender: gender, preference: preference, likes: likes, matches: matches)
                            //print(uid)
                            //print(photo)
