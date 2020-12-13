@@ -35,8 +35,14 @@ class SignupViewController: UIViewController {
             return "Please fill in all fields"
         }
         
-        if(retypePassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) !=  password.text?.trimmingCharacters(in: .whitespacesAndNewlines)){
+        else if(retypePassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) !=  password.text?.trimmingCharacters(in: .whitespacesAndNewlines)){
             return "passwords do not match"
+        }
+        
+        else if let digits = password.text?.trimmingCharacters(in: .whitespacesAndNewlines).count{
+            if digits < 6 {
+                return "password too short"
+            }
         }
         
         return nil

@@ -61,13 +61,22 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
             
             return "Please fill in all fields"
         }
+        else if !self.genderOptions.contains((gender.text?.trimmingCharacters(in: .whitespacesAndNewlines))!){
+            return "gender not in valid choices"
+        }
+        else if !self.sexualityOptions.contains((sexuality.text?.trimmingCharacters(in: .whitespacesAndNewlines))!){
+            return "show preference not in valid choices"
+        }
+        else if !self.stateOptions.contains((state.text?.trimmingCharacters(in: .whitespacesAndNewlines))!){
+            return "state not in valid choices"
+        }
         return nil
     }
     @IBAction func nextClicked(_ sender: Any) {
         // Check if all user input fields are non-empty and in the correct format
         let err = checkInput();
         if err != nil{
-            self.alertSignUpError()
+            self.alertSignUpError(message: err!)
         }
         else{
             
