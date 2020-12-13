@@ -66,17 +66,17 @@ extension DatabaseManager {
                     uid: document.get("uid") as? String ?? "",
                     photo: document.get("photo") as? String ?? "",
                     description: document.get("description") as? String ?? "",
-                    age: document.get("age") as! String,
-                    city: document.get("city") as! String,
-                    state: document.get("state") as! String,
-                    education: document.get("education") as! String,
-                    fieldOfEngineering: document.get("fieldOfEngineering") as! String,
-                    occupation: document.get("occupation") as! String,
-                    quizScore: document.get("quizScore") as! Int,
-                    gender: document.get("gender") as! String,
-                    preference: document.get("preference") as! String,
-                    likes: document.get("likes") as! [String],
-                    matches: document.get("matches") as! [String])
+                    age: document.get("age") as? String ?? "",
+                    city: document.get("city") as? String ?? "",
+                    state: document.get("state") as? String ?? "",
+                    education: document.get("education") as? String ?? "",
+                    fieldOfEngineering: document.get("fieldOfEngineering") as? String ?? "",
+                    occupation: document.get("occupation") as? String ?? "",
+                    quizScore: document.get("quizScore") as? Int ?? 0,
+                    gender: document.get("gender") as? String ?? "",
+                    preference: document.get("preference") as? String ?? "",
+                    likes: document.get("likes") as? [String] ?? [],
+                    matches: document.get("matches") as? [String] ?? [])
                     completion(person)
                 }
             }

@@ -170,6 +170,7 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
             }
             catch {
                 print("There was an error")
+                images.append(UIImage(systemName: "person")!)
             }
         }
 //        for (index, person) in people.enumerated() {
