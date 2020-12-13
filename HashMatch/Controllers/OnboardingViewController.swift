@@ -26,11 +26,11 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var email: String = ""
     
     var selectedGender = ""
-    var genderOptions = ["Male", "Female", "Other"]
+    var genderOptions = ["-Choose Gender-", "Male", "Female", "Other"]
     var selectedSexuality = ""
-    var sexualityOptions = ["Men", "Women", "Everyone"]
+    var sexualityOptions = ["-Choose Preference-", "Men", "Women", "Everyone"]
     var selectedState = ""
-    var stateOptions = [ "AK", "AL", "AR", "AS", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA",     "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"]
+    var stateOptions = ["-Choose State-", "AK", "AL", "AR", "AS", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"]
     let pickerView1 = UIPickerView()
     let pickerView2 = UIPickerView()
     let pickerView3 = UIPickerView()
