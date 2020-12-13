@@ -966,7 +966,7 @@ EExhc3QgTmFtZQ
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Full Name], [Age]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0j-aV-ImP">
-                                <rect key="frame" x="112" y="259" width="156" height="26"/>
+                                <rect key="frame" x="24" y="259" width="324" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1020,7 +1020,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7N-5e-bpT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4319" y="1309"/>
+            <point key="canvasLocation" x="4317.6000000000004" y="1308.6206896551726"/>
         </scene>
         <!--Matches-->
         <scene sceneID="0ER-Y1-E0s">
