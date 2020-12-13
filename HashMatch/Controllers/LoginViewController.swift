@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
             else{
             Auth.auth().signIn(withEmail: email.text!, password:password.text! ) { (result, error) in
                 if error != nil {
+                    self.errorLabel.textColor = UIColor.white
                     self.errorLabel.text = error!.localizedDescription
                     self.errorLabel.alpha = 1
                     
