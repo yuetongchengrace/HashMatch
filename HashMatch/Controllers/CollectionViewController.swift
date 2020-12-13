@@ -17,6 +17,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     var likes: [String] = []
     var matches: [String] = []
     
+    var activityIndicator = ActivityIndicator(view: UIView(), navigationController: nil, tabBarController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +34,9 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         // fetchMyData()
         // fetchData()
         setUpCollectionView()
+        
+        activityIndicator = ActivityIndicator(view: collectionView, navigationController: nil, tabBarController: nil)
+        activityIndicator.showActivityIndicator()
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -105,6 +110,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                 }
                 self.orderPeople()
                 self.cacheImages()
+                self.activityIndicator.stopActivityIndicator()
                 self.collectionView.reloadData()
             }
         }
@@ -195,6 +201,9 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         // self.present(secondViewController, animated: true, completion: nil)
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
+    
+    
+    
 }
 
 extension CollectionViewController : UICollectionViewDelegateFlowLayout {

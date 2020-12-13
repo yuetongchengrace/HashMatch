@@ -44,6 +44,10 @@ class LogoutViewController: UIViewController {
     
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        updatePage()
+    }
+    
     func updatePage() {
         DatabaseManager.shared.getPersonFromUID(with: userId, completion: { person in
             if let fullURL =  URL(string: person.photo){
@@ -67,6 +71,7 @@ class LogoutViewController: UIViewController {
             self.descriptionLabel.text = "\(person.description)"
                 
         })
+        profilePicView.setNeedsDisplay()
     }
 
     

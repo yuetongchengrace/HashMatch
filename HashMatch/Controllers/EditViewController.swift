@@ -168,9 +168,7 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             let data = image.pngData() else {
                 return
         }
-        
-        let storage = Storage.storage().reference()
-        
+                
         let db = Firestore.firestore()
         let docRef = db.collection("users").whereField("uid", isEqualTo: userId)
         docRef.getDocuments { (querySnapshot, error) in
@@ -181,12 +179,17 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     let email = document.documentID
                     let fileName = "\(email).png"
                     
-                    document.setValuesForKeys(["firstName": fName, "lastName": lName, "age": myAge, "state": myState, "education": edu, "fieldOfEngineering": field, "gender": gen, "preference": pref, "occupation": occupation])
-                    
-                    storage.child("images/\(fileName)").putData(data, metadata: nil, completion: { metadata, error in
-                        guard error == nil else {
-                            print("Failed to upload data to storage")
+                    //save fields
+                    db.collection("users").document(email).setData(["firstName": fName, "lastName": lName, "age": myAge, "city": myCity, "state": myState, "education": edu, "fieldOfEngineering": field, "gender": gen, "preference": pref, "occupation": occupation], merge: true)
+                    //replace prev image in storage with current
+                    StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
+                        switch result {
+                        case .success:
+                            print("image saved")
+                            _ = self.navigationController?.popViewController(animated: true)
                             return
+                        case .failure(let error):
+                            print("Storage manager error: \(error)")
                         }
                     })
                     
@@ -194,7 +197,6 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             }
         }
         
-        _ = navigationController?.popViewController(animated: true)
     }
     
 }
