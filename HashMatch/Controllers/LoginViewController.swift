@@ -32,8 +32,9 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
         let err = checkInput();
            if err != nil{
-               errorLabel.text = err!
-               errorLabel.alpha = 1
+                errorLabel.textColor = UIColor.white
+                errorLabel.text = err!
+                errorLabel.alpha = 1
             }
             else{
             Auth.auth().signIn(withEmail: email.text!, password:password.text! ) { (result, error) in
