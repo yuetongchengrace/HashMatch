@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         self.view.layer.insertSublayer(gradient, at: 0)
 
         // Do any additional setup after loading the view.
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     func checkInput () -> String?{
        if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{

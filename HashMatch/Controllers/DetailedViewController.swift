@@ -40,9 +40,12 @@ class DetailedViewController: UIViewController {
      
         //add Image
         let url = URL(string: p.photo)
-        if let img = try? Data(contentsOf: url!){
-            imageView.image = UIImage(data:img)
+        if url != nil{
+            if let img = try? Data(contentsOf: url!){
+               imageView.image = UIImage(data:img)
+            }
         }
+
         
         name_ageLabel.text = "\(person.firstName) \(person.lastName), \(person.age)"
         gender_occuLabel.text = "\(person.gender), \(person.occupation)"
