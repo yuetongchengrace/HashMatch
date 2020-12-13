@@ -573,7 +573,7 @@ EExhc3QgTmFtZQ
             <objects>
                 <viewController storyboardIdentifier="EditProfile" hidesBottomBarWhenPushed="YES" id="KA7-Ox-kKY" customClass="EditViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywf-El-a1N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cXX-gw-UTp">
@@ -849,14 +849,14 @@ EExhc3QgTmFtZQ
                     <connections>
                         <segue destination="33Q-Bo-zac" kind="relationship" relationship="viewControllers" id="ePz-cX-3lC"/>
                         <segue destination="ILT-Dj-eOA" kind="relationship" relationship="viewControllers" id="i2d-e3-ThR"/>
-                        <segue destination="XaS-R6-SgJ" kind="relationship" relationship="viewControllers" id="XGX-EC-LBg"/>
+                        <segue destination="Qca-Bx-WkI" kind="relationship" relationship="viewControllers" id="uLz-a1-4dA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pev-63-OoK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="429"/>
+            <point key="canvasLocation" x="2518" y="383"/>
         </scene>
-        <!--Logout View Controller-->
+        <!--Account-->
         <scene sceneID="sws-Fu-9pA">
             <objects>
                 <viewController id="Qca-Bx-WkI" customClass="LogoutViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -1010,6 +1010,7 @@ EExhc3QgTmFtZQ
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="H3q-Df-pKR"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" selectedImage="person" id="3vX-1g-Kfp"/>
                     <navigationItem key="navigationItem" id="TDo-Jc-1GH"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="nAJ-mT-s5y" id="jmd-wH-QSP"/>
@@ -1555,31 +1556,13 @@ EExhc3QgTmFtZQ
             </objects>
             <point key="canvasLocation" x="3889" y="-300"/>
         </scene>
-        <!--Account-->
-        <scene sceneID="Xsb-Rv-DSx">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XaS-R6-SgJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" id="WIw-2e-feD"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GCk-zd-zrw">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Qca-Bx-WkI" kind="relationship" relationship="rootViewController" id="Fim-Wg-s67"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yzE-ug-bGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3426.4000000000001" y="1309.3596059113302"/>
-        </scene>
     </scenes>
     <resources>
         <image name="heart.circle" catalog="system" width="128" height="121"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
     </resources>
 </document>
