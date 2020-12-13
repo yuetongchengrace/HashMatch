@@ -571,13 +571,13 @@ EExhc3QgTmFtZQ
         <!--Edit View Controller-->
         <scene sceneID="5ts-Gy-wYP">
             <objects>
-                <viewController id="KA7-Ox-kKY" customClass="EditViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfile" hidesBottomBarWhenPushed="YES" id="KA7-Ox-kKY" customClass="EditViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywf-El-a1N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cXX-gw-UTp">
-                                <rect key="frame" x="31" y="123" width="312" height="34"/>
+                                <rect key="frame" x="31" y="281" width="312" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="placeholder" base64-UTF8="YES">
@@ -587,7 +587,7 @@ EEZpcnN0IE5hbWU
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edK-mX-5DE">
-                                <rect key="frame" x="31" y="192" width="312" height="34"/>
+                                <rect key="frame" x="31" y="336" width="312" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="placeholder" base64-UTF8="YES">
@@ -597,49 +597,49 @@ EExhc3QgTmFtZQ
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Show me" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mBw-jK-26u">
-                                <rect key="frame" x="31" y="344" width="312" height="34"/>
+                                <rect key="frame" x="31" y="438" width="312" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kiZ-2T-gM8">
-                                <rect key="frame" x="31" y="496" width="149" height="34"/>
+                                <rect key="frame" x="31" y="553" width="149" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jYv-Fd-d5R">
-                                <rect key="frame" x="194" y="496" width="149" height="34"/>
+                                <rect key="frame" x="194" y="551" width="149" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Education" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GW7-TI-hNI">
-                                <rect key="frame" x="31" y="570" width="312" height="34"/>
+                                <rect key="frame" x="31" y="608" width="312" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Field of Engineering" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILS-fL-wui">
-                                <rect key="frame" x="31" y="644" width="312" height="34"/>
+                                <rect key="frame" x="31" y="664" width="312" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yCR-bW-OAZ">
-                                <rect key="frame" x="31" y="422" width="149" height="34"/>
+                                <rect key="frame" x="31" y="495" width="149" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Years Old" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gQ-Ou-8RK">
-                                <rect key="frame" x="194" y="427" width="74" height="21"/>
+                                <rect key="frame" x="194" y="502" width="74" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -661,21 +661,38 @@ EExhc3QgTmFtZQ
                                 </state>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qlj-wE-Ea1">
-                                <rect key="frame" x="31" y="268" width="312" height="34"/>
+                                <rect key="frame" x="31" y="389" width="312" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-vc-nNP">
+                                <rect key="frame" x="120" y="114" width="134" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="jWk-B9-mRq"/>
                     </view>
                     <navigationItem key="navigationItem" id="QZR-h7-6A1"/>
+                    <connections>
+                        <outlet property="FOE" destination="ILS-fL-wui" id="GPb-7s-ene"/>
+                        <outlet property="age" destination="yCR-bW-OAZ" id="uJt-bk-WAu"/>
+                        <outlet property="city" destination="kiZ-2T-gM8" id="0tk-y0-V3l"/>
+                        <outlet property="education" destination="GW7-TI-hNI" id="JCY-Xw-jZF"/>
+                        <outlet property="firstName" destination="cXX-gw-UTp" id="zSw-al-Lw3"/>
+                        <outlet property="gender" destination="Qlj-wE-Ea1" id="1q7-6g-FSn"/>
+                        <outlet property="lastName" destination="edK-mX-5DE" id="TIX-00-4ap"/>
+                        <outlet property="occu" destination="MKo-nb-lcA" id="VDC-kq-bEt"/>
+                        <outlet property="profilePic" destination="rrW-vc-nNP" id="4l3-jL-LFo"/>
+                        <outlet property="sexuality" destination="mBw-jK-26u" id="qLl-h6-udF"/>
+                        <outlet property="state" destination="jYv-Fd-d5R" id="Yis-Jj-98G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfQ-Gp-d3C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="1309"/>
+            <point key="canvasLocation" x="5175" y="1309"/>
         </scene>
         <!--Detailed View Controller-->
         <scene sceneID="uuw-W9-9s0">
@@ -829,14 +846,14 @@ EExhc3QgTmFtZQ
                     <connections>
                         <segue destination="33Q-Bo-zac" kind="relationship" relationship="viewControllers" id="ePz-cX-3lC"/>
                         <segue destination="ILT-Dj-eOA" kind="relationship" relationship="viewControllers" id="i2d-e3-ThR"/>
-                        <segue destination="Qca-Bx-WkI" kind="relationship" relationship="viewControllers" id="XGX-EC-LBg"/>
+                        <segue destination="XaS-R6-SgJ" kind="relationship" relationship="viewControllers" id="XGX-EC-LBg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pev-63-OoK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2484" y="429"/>
         </scene>
-        <!--Account-->
+        <!--Logout View Controller-->
         <scene sceneID="sws-Fu-9pA">
             <objects>
                 <viewController id="Qca-Bx-WkI" customClass="LogoutViewController" customModule="HashMatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -890,12 +907,17 @@ EExhc3QgTmFtZQ
                                 <state key="normal" title="Edit" image="pencil" catalog="system">
                                     <color key="titleColor" red="0.1087935531" green="0.10987071700000001" blue="0.10987071700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="KA7-Ox-kKY" kind="push" id="HgR-zV-a4i"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UC9-WF-Q1u">
                                 <rect key="frame" x="281" y="33" width="78" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutClicked:" destination="Qca-Bx-WkI" eventType="touchUpInside" id="9Fk-NS-AtH"/>
                                 </connections>
@@ -985,7 +1007,7 @@ EExhc3QgTmFtZQ
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="H3q-Df-pKR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" id="WIw-2e-feD"/>
+                    <navigationItem key="navigationItem" id="TDo-Jc-1GH"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="nAJ-mT-s5y" id="jmd-wH-QSP"/>
                         <outlet property="eduLabel" destination="yQp-VN-VUv" id="CXj-EB-68w"/>
@@ -1000,7 +1022,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7N-5e-bpT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="1309.3596059113302"/>
+            <point key="canvasLocation" x="4319" y="1309"/>
         </scene>
         <!--Matches-->
         <scene sceneID="0ER-Y1-E0s">
@@ -1070,7 +1092,7 @@ EExhc3QgTmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3FN-rj-ugh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3556" y="1115.7635467980297"/>
+            <point key="canvasLocation" x="2294" y="1309"/>
         </scene>
         <!--Question View Controller2-->
         <scene sceneID="txP-Sa-fIh">
@@ -1529,6 +1551,25 @@ EExhc3QgTmFtZQ
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHo-Cw-BmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3889" y="-300"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="Xsb-Rv-DSx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XaS-R6-SgJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" id="WIw-2e-feD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GCk-zd-zrw">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qca-Bx-WkI" kind="relationship" relationship="rootViewController" id="Fim-Wg-s67"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yzE-ug-bGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3426.4000000000001" y="1309.3596059113302"/>
         </scene>
     </scenes>
     <resources>

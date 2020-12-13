@@ -26,6 +26,7 @@ class LogoutViewController: UIViewController {
     var currentPerson = Person()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         if let id = UserDefaults.standard.string(forKey: "user"){
             userId = id
         }
@@ -45,7 +46,6 @@ class LogoutViewController: UIViewController {
     
     func updatePage() {
         DatabaseManager.shared.getPersonFromUID(with: userId, completion: { person in
-            print(person.photo)
             if let fullURL =  URL(string: person.photo){
                do{
                    let data = try Data(contentsOf: fullURL)
@@ -77,7 +77,6 @@ class LogoutViewController: UIViewController {
         self.navigationController?.pushViewController(questionViewController1, animated: true)
         
     }
-    
     
     @IBAction func logoutClicked(_ sender: Any) {
         // UserDefaults.standard.set(false, forKey: "isUserSignedIn")
