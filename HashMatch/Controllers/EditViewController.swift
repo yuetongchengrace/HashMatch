@@ -58,6 +58,18 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         gesture.numberOfTouchesRequired = 1
         profilePic.addGestureRecognizer(gesture)
         
+        //edit style of textField
+        firstName.applyTextFieldDesign()
+        lastName.applyTextFieldDesign()
+        gender.applyTextFieldDesign()
+        sexuality.applyTextFieldDesign()
+        age.applyTextFieldDesign()
+        city.applyTextFieldDesign()
+        state.applyTextFieldDesign()
+        education.applyTextFieldDesign()
+        FOE.applyTextFieldDesign()
+        occu.applyTextFieldDesign()
+        
         createPickerView()
         dismissPickerView()
     }
@@ -236,5 +248,22 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
             return
         }
         self.profilePic.image = image
+    }
+}
+extension UITextField{
+    func applyTextFieldDesign(){
+        self.layer.backgroundColor = UIColor.systemGray6.cgColor
+        self.layer.cornerRadius = self.frame.height/2
+    }
+    func applyQuizAnswersDesign(){
+        self.layer.backgroundColor = UIColor.white.cgColor
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.cornerRadius = self.frame.height/2
+
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowOpacity = 1.0
     }
 }

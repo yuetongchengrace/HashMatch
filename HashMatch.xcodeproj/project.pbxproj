@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240DAA8E2586C251007379DD /* customTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240DAA8D2586C251007379DD /* customTextField.swift */; };
 		2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */; };
 		2419F045256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */; };
 		2482EAF525804EC4005687CB /* PplMatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482EAF425804EC4005687CB /* PplMatchedViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		240DAA8D2586C251007379DD /* customTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTextField.swift; sourceTree = "<group>"; };
 		2419F040256B4E8300D9F7CE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescribeYourselfVC.swift; sourceTree = "<group>"; };
 		2482EAF425804EC4005687CB /* PplMatchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PplMatchedViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				2482EAF425804EC4005687CB /* PplMatchedViewController.swift */,
 				2419F044256C418E00D9F7CE /* OnboardingDescribeYourselfVC.swift */,
 				DB46A19B25691D5400903890 /* SignupViewController.swift */,
+				240DAA8D2586C251007379DD /* customTextField.swift */,
 				DB46A18B25691C6B00903890 /* ViewController.swift */,
 				DBDAF5B425777F8D00620CFC /* LogoutViewController.swift */,
 				62BC7DD7258598E600741523 /* EditViewController.swift */,
@@ -293,6 +296,7 @@
 				62B1585F2579F6B900594CF5 /* DatabaseManager.swift in Sources */,
 				2482EAF525804EC4005687CB /* PplMatchedViewController.swift in Sources */,
 				62B15862257A0BF300594CF5 /* StorageManager.swift in Sources */,
+				240DAA8E2586C251007379DD /* customTextField.swift in Sources */,
 				DBF063DE257D9F380069D7B9 /* QuestionViewController3.swift in Sources */,
 				2419F041256B4E8300D9F7CE /* OnboardingViewController.swift in Sources */,
 				DBDAF5B3257766A400620CFC /* Structs.swift in Sources */,
