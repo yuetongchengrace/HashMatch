@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -52,8 +54,16 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         profilePic.layer.borderColor = UIColor.lightGray.cgColor
         profilePic.isUserInteractionEnabled = true
         
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(changeProfilePic))
+        gesture.numberOfTouchesRequired = 1
+        profilePic.addGestureRecognizer(gesture)
+        
         createPickerView()
         dismissPickerView()
+    }
+    
+    @objc private func changeProfilePic() {
+        presentPhotoActionSheet()
     }
     
     func updatePage() {
@@ -142,6 +152,51 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             state.text = selectedState
         }
     }
+    
+    @IBAction func savePressed(_ sender: Any) {
+        let fName = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let lName = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let myAge = age.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let myCity = city.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let myState = state.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let edu = education.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let field = FOE.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let occupation = occu.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let gen = gender.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let pref = sexuality.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let image = profilePic.image,
+            let data = image.pngData() else {
+                return
+        }
+        
+        let storage = Storage.storage().reference()
+        
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").whereField("uid", isEqualTo: userId)
+        docRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let email = document.documentID
+                    let fileName = "\(email).png"
+                    
+                    document.setValuesForKeys(["firstName": fName, "lastName": lName, "age": myAge, "state": myState, "education": edu, "fieldOfEngineering": field, "gender": gen, "preference": pref, "occupation": occupation])
+                    
+                    storage.child("images/\(fileName)").putData(data, metadata: nil, completion: { metadata, error in
+                        guard error == nil else {
+                            print("Failed to upload data to storage")
+                            return
+                        }
+                    })
+                    
+                }
+            }
+        }
+        
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension EditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

@@ -58,11 +58,11 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
        })
     }
     func fetchData(){
-        print("my score is:", self.score)
-        print("my gender is:", self.gender)
-        print("my preference is:", self.preference)
-        print("I have liked: ", self.likes)
-        print("I have matched: ", self.matches)
+//        print("my score is:", self.score)
+//        print("my gender is:", self.gender)
+//        print("my preference is:", self.preference)
+//        print("I have liked: ", self.likes)
+//        print("I have matched: ", self.matches)
         let db = Firestore.firestore()
         db.collection("users").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -92,8 +92,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     let likes = data["likes"] as? [String] ?? [""]
                     let matches = data["matches"] as? [String] ?? [""]
                     if self.preference == "Everyone" || self.preference == "Women" && gender == "Female" || self.preference == "Men" && gender == "Male"{
-                        print(self.preference)
-                        print(gender)
+//                        print(self.preference)
+//                        print(gender)
                         if uid != self.userId && !self.likes.contains(email) && !self.matches.contains(email){
                            let newPerson = Person(email: email, firstName: firstName, lastName: lastName, uid: uid, photo: photo, description: description, age: age, city: city, state: state,education: education, fieldOfEngineering: fieldOfEngineering, occupation: occupation, quizScore: quizScore, gender: gender, preference: preference, likes: likes, matches: matches)
                            //print(uid)
@@ -186,7 +186,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("touched")
+//        print("touched")
 //        let detailedVC = DetailedViewController()
 //        detailedVC
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
