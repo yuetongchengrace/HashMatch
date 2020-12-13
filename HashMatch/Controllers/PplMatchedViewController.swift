@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import MessageUI
 
 class PplMatchedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -75,6 +76,32 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
         cell.contentView.addSubview(profileUIView)
 
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Need to be run on actual device
+        showMailComposer(num: indexPath.row)
+        print(indexPath.row)
+    }
+    func showMailComposer(num: Int){
+        
+//        if let url = URL(string: people[num].email) {
+//
+//             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//
+//        }
+        guard MFMailComposeViewController.canSendMail() else{
+            //show alert
+            print("here i couldn't send mail")
+            self.alertError(message: "Cannot send email on simulator")
+            return
+        }
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients([people[num].email])
+        composer.setSubject("Hi! I am from HashMatch")
+        composer.setMessageBody("Nice to meet you \(people[num].firstName):)", isHTML: false)
+        composer.setPreferredSendingEmailAddress(UserDefaults.standard.object(forKey: "email") as! String)
+        present(composer, animated: true)
     }
     
     func setupTableView(){
@@ -159,5 +186,34 @@ class PplMatchedViewController: UIViewController, UITableViewDataSource, UITable
 //              }
 //           }
 //       }
+    }
+    func alertError(message: String = "Cannot send email on simulator") {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+}
+
+extension PplMatchedViewController: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let _ = error{
+            //show error
+            controller.dismiss(animated: true)
+        }
+        
+        switch result {
+        case .cancelled:
+            print("cancelled")
+        case .saved:
+            print("saved")
+        case .sent:
+            print("sent")
+        case .failed:
+            print("failed")
+        @unknown default:
+            print("unknown error")
+        }
+        
+        controller.dismiss(animated: true)
     }
 }

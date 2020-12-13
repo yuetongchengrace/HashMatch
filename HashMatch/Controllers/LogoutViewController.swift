@@ -87,6 +87,7 @@ class LogoutViewController: UIViewController {
         // UserDefaults.standard.set(false, forKey: "isUserSignedIn")
         UserDefaults.standard.removeObject(forKey: "isUserSignedIn")
         UserDefaults.standard.removeObject(forKey: "user")
+        UserDefaults.standard.removeObject(forKey: "email")
         print(UserDefaults.standard.dictionaryRepresentation())
         navigationController?.popToRootViewController(animated: true)
 //        let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "baseVC") as UIViewController

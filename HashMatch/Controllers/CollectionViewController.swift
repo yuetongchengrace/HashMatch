@@ -60,6 +60,10 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             self.likes = person.likes
             self.matches = person.matches
             self.fetchData()
+            let defaults = UserDefaults.standard
+            if defaults.object(forKey: "email") == nil{
+                 defaults.set(person.email, forKey: "email")
+            }
        })
     }
     func fetchData(){

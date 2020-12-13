@@ -50,6 +50,9 @@ class DetailedViewController: UIViewController {
         eduLabel.text = "\(person.education)"
         fieldLabel.text = "\(person.fieldOfEngineering)"
         descriptionLabel.text = "\(person.description)"
+        descriptionLabel.layer.borderColor = UIColor.darkGray.cgColor
+        descriptionLabel.layer.borderWidth = 3.0
+        descriptionLabel.layer.cornerRadius = 8
     }
     
     @IBAction func likePressed(_ sender: Any) {
