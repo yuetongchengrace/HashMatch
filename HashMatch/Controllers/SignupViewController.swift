@@ -69,6 +69,23 @@ class SignupViewController: UIViewController {
             })
             
             //transition to the next screen which should be the onboarding questions
+            Auth.auth().createUser(withEmail: email.text!, password: password.text!){
+                (result, error) in
+                
+                //check for errors
+                if error != nil{
+                    //there was some error
+                    self.alertSignUpError(message: "Error creating user")
+                }
+                else{
+                    //signed in successfully, save to user default
+                    let defaults = UserDefaults.standard
+                    defaults.set(true, forKey: "isUserSignedIn")
+                    if let id = Auth.auth().currentUser?.uid{
+                        defaults.set(id ,forKey: "user")
+                    }
+                }
+            }
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let secondViewController = storyboard.instantiateViewController(withIdentifier: "Onboarding1") as? OnboardingViewController
             secondViewController!.email = self.email.text!

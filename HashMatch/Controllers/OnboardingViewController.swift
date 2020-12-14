@@ -24,8 +24,8 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var fieldOfEngineering: UITextField!
     @IBOutlet weak var occupation: UITextField!
     
-    var email = ""
-    var password = ""
+    var email: String = ""
+    var password: String = ""
     
     var selectedGender = ""
     var genderOptions = ["-Choose Gender-", "Male", "Female", "Other"]
@@ -44,6 +44,7 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         let gradient = createGradient()
+        print("EMAIL:", email)
         self.view.layer.insertSublayer(gradient, at: 0)
         self.hideKeyboardWhenTap()
         //hide navigation bar so that the user cannot click back to the signup page
@@ -88,6 +89,7 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
         else{
             
             let fName = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            print(fName)
             let lName = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let myAge = age.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let myCity = city.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -97,26 +99,9 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
             let occu = occupation.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let gen = gender.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let pref = sexuality.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            DatabaseManager.shared.insertPerson(with: Person(email: email, firstName: fName, lastName: lName, uid: UserDefaults.standard.string(forKey: "user")!, photo: "", description: "", age: myAge, city: myCity, state: myState, education: edu, fieldOfEngineering: field, occupation: occu, quizScore: 0, gender: gen, preference: pref, likes: [String](), matches: [String]()))
-            
-            Auth.auth().createUser(withEmail: email, password: password){
-                (result, error) in
-                
-                //check for errors
-                if error != nil{
-                    //there was some error
-                    self.alertSignUpError(message: "Error creating user")
-                }
-                else{
-                    //signed in successfully, save to user default
-                    let defaults = UserDefaults.standard
-                    defaults.set(true, forKey: "isUserSignedIn")
-                    if let id = Auth.auth().currentUser?.uid{
-                        defaults.set(id ,forKey: "user")
-                    }
-                }
-            }
+            DatabaseManager.shared.insertPerson(with: Person(email: self.email, firstName: fName, lastName: lName, uid: UserDefaults.standard.string(forKey: "user")!, photo: "", description: "", age: myAge, city: myCity, state: myState, education: edu, fieldOfEngineering: field, occupation: occu, quizScore: 0, gender: gen, preference: pref, likes: [String](), matches: [String]()))
+        
+                       
         }
         // Push the next page after everything is success (segue is working now?)
     }
