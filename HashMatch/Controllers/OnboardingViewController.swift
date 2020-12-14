@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseAuth
 
 class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -23,7 +24,8 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var fieldOfEngineering: UITextField!
     @IBOutlet weak var occupation: UITextField!
     
-    var email: String = ""
+    var email = ""
+    var password = ""
     
     var selectedGender = ""
     var genderOptions = ["-Choose Gender-", "Male", "Female", "Other"]
@@ -43,6 +45,7 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
         super.viewDidLoad()
         let gradient = createGradient()
         self.view.layer.insertSublayer(gradient, at: 0)
+        self.hideKeyboardWhenTap()
         //hide navigation bar so that the user cannot click back to the signup page
         navigationController?.setNavigationBarHidden(true, animated: false)
         // Do any additional setup after loading the view.
@@ -92,7 +95,24 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
             let pref = sexuality.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             DatabaseManager.shared.insertPerson(with: Person(email: email, firstName: fName, lastName: lName, uid: UserDefaults.standard.string(forKey: "user")!, photo: "", description: "", age: myAge, city: myCity, state: myState, education: edu, fieldOfEngineering: field, occupation: occu, quizScore: 0, gender: gen, preference: pref, likes: [String](), matches: [String]()))
-        
+            
+            Auth.auth().createUser(withEmail: email, password: password){
+                (result, error) in
+                
+                //check for errors
+                if error != nil{
+                    //there was some error
+                    self.alertSignUpError(message: "Error creating user")
+                }
+                else{
+                    //signed in successfully, save to user default
+                    let defaults = UserDefaults.standard
+                    defaults.set(true, forKey: "isUserSignedIn")
+                    if let id = Auth.auth().currentUser?.uid{
+                        defaults.set(id ,forKey: "user")
+                    }
+                }
+            }
         }
         // Push the next page after everything is success (segue is working now?)
     }
@@ -111,6 +131,8 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
             print("1111: " + vc!.email)
         }
     }
+    
+    
     
     //pickerView stuff
     //I CAN STILL TYPE THINGS INTO THE TEXTFIELD...MAYBE OKAY? IF INPUTVIEW IS SET I DONT THINK KEYBOARD APPEARS FOR USERS ON MOBILE?? which is what actually matters

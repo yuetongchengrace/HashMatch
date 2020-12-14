@@ -19,8 +19,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let gradient = createGradient()
         self.view.layer.insertSublayer(gradient, at: 0)
+        self.hideKeyboardWhenTap()
 
         // Do any additional setup after loading the view.
+        password.isSecureTextEntry = true
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     func checkInput () -> String?{

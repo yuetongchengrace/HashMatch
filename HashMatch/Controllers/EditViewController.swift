@@ -38,6 +38,7 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTap()
         if let id = UserDefaults.standard.string(forKey: "user"){
             userId = id
         }
@@ -76,20 +77,45 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @objc private func changeProfilePic() {
         presentPhotoActionSheet()
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").whereField("uid", isEqualTo: userId)
+        docRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let email = document.documentID
+                    let fileName = "\(email).png"
+                    guard let image = self.profilePic.image,
+                        let data = image.pngData() else {
+                            return
+                    }
+                    StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
+                        switch result {
+                        case .success:
+ //                           print("image saved")
+                            return
+                        case .failure(let error):
+                            print("Storage manager error: \(error)")
+                        }
+                    })
+                }
+            }
+        }
     }
     
     func updatePage() {
         DatabaseManager.shared.getPersonFromUID(with: userId, completion: { person in
             if let fullURL =  URL(string: person.photo){
-               do{
-                   let data = try Data(contentsOf: fullURL)
-                   let img = UIImage(data:data)
-                   // print(index)
-                self.profilePic.image = img!
-               }
-               catch {
-                   print("There was an error")
-               }
+                do{
+                    let data = try Data(contentsOf: fullURL)
+                    let img = UIImage(data:data)
+                    // print(index)
+                    self.profilePic.image = img!
+                }
+                catch {
+                    print("There was an error")
+                }
             }
             self.firstName.text = person.firstName
             self.lastName.text = person.lastName
@@ -176,10 +202,7 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let occupation = occu.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let gen = gender.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let pref = sexuality.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard let image = profilePic.image,
-            let data = image.pngData() else {
-                return
-        }
+        
                 
         let db = Firestore.firestore()
         let docRef = db.collection("users").whereField("uid", isEqualTo: userId)
@@ -189,26 +212,13 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             } else {
                 for document in querySnapshot!.documents {
                     let email = document.documentID
-                    let fileName = "\(email).png"
-                    
                     //save fields
                     db.collection("users").document(email).setData(["firstName": fName, "lastName": lName, "age": myAge, "city": myCity, "state": myState, "education": edu, "fieldOfEngineering": field, "gender": gen, "preference": pref, "occupation": occupation], merge: true)
-                    //replace prev image in storage with current
-                    StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
-                        switch result {
-                        case .success:
-                            print("image saved")
-                            _ = self.navigationController?.popViewController(animated: true)
-                            return
-                        case .failure(let error):
-                            print("Storage manager error: \(error)")
-                        }
-                    })
-                    
                 }
             }
         }
-        
+        //return to profile page
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
 }

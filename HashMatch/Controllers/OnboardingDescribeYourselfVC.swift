@@ -24,6 +24,7 @@ class OnboardingDescribeYourselfVC: UIViewController {
         spinner.isHidden = true
         let gradient = createGradient()
         self.view.layer.insertSublayer(gradient, at: 0)
+        self.hideKeyboardWhenTap()
         describeYourselfTextView.textViewDesign()
         nextbtn.applyPrimaryBtnDesign()
         

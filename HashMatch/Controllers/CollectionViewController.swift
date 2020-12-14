@@ -24,6 +24,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTap()
         searchBar.delegate = self
         navigationController?.setNavigationBarHidden(true, animated: false)
         if let id = UserDefaults.standard.string(forKey: "user"){

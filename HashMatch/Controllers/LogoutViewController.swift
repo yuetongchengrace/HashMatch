@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 //This is the user setting page
 //We can pull user information from the users collection and display on corresponding fields
 class LogoutViewController: UIViewController {
@@ -20,13 +21,18 @@ class LogoutViewController: UIViewController {
     @IBOutlet weak var eduLabel: UILabel!
     @IBOutlet weak var fieldLabel: UILabel!
     @IBOutlet weak var occuLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descView: UITextView!
+    @IBOutlet weak var editDescLabel: UIButton!
+    
     
     var userId = ""
     var currentPerson = Person()
+    var editingDescription = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        self.hideKeyboardWhenTap()
         if let id = UserDefaults.standard.string(forKey: "user"){
             userId = id
         }
@@ -40,6 +46,8 @@ class LogoutViewController: UIViewController {
         profilePicView.layer.masksToBounds = true
         profilePicView.layer.borderWidth = 2
         profilePicView.layer.borderColor = UIColor.lightGray.cgColor
+        descView.isEditable = false
+        descView.layer.borderColor = UIColor.black.cgColor
         updatePage()
     
     }
@@ -68,12 +76,17 @@ class LogoutViewController: UIViewController {
             self.eduLabel.text = "\(person.education)"
             self.fieldLabel.text = "\(person.fieldOfEngineering)"
             self.occuLabel.text = "\(person.occupation)"
-            self.descriptionLabel.text = "\(person.description)"
+            self.descView.text = "\(person.description)"
                 
         })
         profilePicView.setNeedsDisplay()
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        descView.isEditable = false
+        descView.layer.borderWidth = 0
+        editDescLabel.setTitle("Edit Description", for: .normal)
+    }
     
     @IBAction func retakeQuiz(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -97,7 +110,39 @@ class LogoutViewController: UIViewController {
         //self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func editDescription(_ sender: Any) {
+        if !descView.isEditable {
+            descView.isEditable = true
+            descView.layer.borderWidth = 1
+            editDescLabel.setTitle("Save", for: .normal)
+            return
 
+        }
+        if descView.isEditable {
+            descView.isEditable = false
+            descView.layer.borderWidth = 0
+            editDescLabel.setTitle("Edit Description", for: .normal)
+            
+            let db = Firestore.firestore()
+            let docRef = db.collection("users").whereField("uid", isEqualTo: userId)
+            docRef.getDocuments { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let email = document.documentID
+                        
+                        //save desc
+                        db.collection("users").document(email).setData(["description": self.descView.text!], merge: true)
+                    }
+                }
+            }
+            return
+        }
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
