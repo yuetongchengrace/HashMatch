@@ -126,7 +126,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     }
                 }
                 self.orderPeople()
-                // self.cacheImages()
+                // Uncomment this following line before actual submission!!!!!!!
+                self.cacheImages()
                 self.activityIndicator.stopActivityIndicator()
                 self.collectionView.reloadData()
             }

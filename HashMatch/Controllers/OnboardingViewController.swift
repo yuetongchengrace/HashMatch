@@ -73,6 +73,10 @@ class OnboardingViewController: UIViewController, UIPickerViewDelegate, UIPicker
         else if !self.stateOptions.contains((state.text?.trimmingCharacters(in: .whitespacesAndNewlines))!){
             return "state not in valid choices"
         }
+        else if age.text?.trimmingCharacters(in: .whitespacesAndNewlines).isDigits == false{
+            return "Age is not a number"
+        }
+
         return nil
     }
     @IBAction func nextClicked(_ sender: Any) {
@@ -206,4 +210,11 @@ extension UITextView{
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.lightGray.cgColor
     }
+}
+
+extension String {
+  var isDigits: Bool {
+    guard !self.isEmpty else { return false }
+    return !self.contains { Int(String($0)) == nil }
+  }
 }

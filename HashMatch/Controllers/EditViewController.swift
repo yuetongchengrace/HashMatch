@@ -103,7 +103,30 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             }
         }
     }
-    
+    func checkInput () -> String?{
+        if firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || age.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            city.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            state.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            education.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            FOE.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            occu.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            
+            return "Please fill in all fields"
+        }
+        else if !self.genderOptions.contains((gender.text?.trimmingCharacters(in: .whitespacesAndNewlines))!){
+            return "gender not in valid choices"
+        }
+        else if !self.sexualityOptions.contains((sexuality.text?.trimmingCharacters(in: .whitespacesAndNewlines))!){
+            return "show preference not in valid choices"
+        }
+        else if !self.stateOptions.contains((state.text?.trimmingCharacters(in: .whitespacesAndNewlines))!){
+            return "state not in valid choices"
+        }
+        else if age.text?.trimmingCharacters(in: .whitespacesAndNewlines).isDigits == false{
+            return "Age is not a number"
+        }
+        return nil
+    }
     func updatePage() {
         DatabaseManager.shared.getPersonFromUID(with: userId, completion: { person in
             if let fullURL =  URL(string: person.photo){
@@ -203,24 +226,34 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let gen = gender.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let pref = sexuality.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-                
-        let db = Firestore.firestore()
-        let docRef = db.collection("users").whereField("uid", isEqualTo: userId)
-        docRef.getDocuments { (querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let email = document.documentID
-                    //save fields
-                    db.collection("users").document(email).setData(["firstName": fName, "lastName": lName, "age": myAge, "city": myCity, "state": myState, "education": edu, "fieldOfEngineering": field, "gender": gen, "preference": pref, "occupation": occupation], merge: true)
+        let err = checkInput();
+        if err != nil{
+            self.alertSignUpError(message: err!)
+            
+        }
+        else{
+            let db = Firestore.firestore()
+            let docRef = db.collection("users").whereField("uid", isEqualTo: userId)
+            docRef.getDocuments { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let email = document.documentID
+                        //save fields
+                        db.collection("users").document(email).setData(["firstName": fName, "lastName": lName, "age": myAge, "city": myCity, "state": myState, "education": edu, "fieldOfEngineering": field, "gender": gen, "preference": pref, "occupation": occupation], merge: true)
+                    }
                 }
             }
+            //return to profile page
+            _ = self.navigationController?.popViewController(animated: true)
         }
-        //return to profile page
-        _ = self.navigationController?.popViewController(animated: true)
     }
-    
+    func alertSignUpError(message: String = "Please answer all fields.") {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
 }
 
 extension EditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

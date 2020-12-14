@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
                     self.errorLabel.textColor = UIColor.white
                     self.errorLabel.text = error!.localizedDescription
                     self.errorLabel.alpha = 1
+                    self.errorLabel.numberOfLines = 2
                     
                 }
                 else{
